@@ -68,6 +68,9 @@ from swagger_client.models.transaction_summary import TransactionSummary
 from swagger_client.models.transaction_wrapper import TransactionWrapper
 from swagger_client.models.transactions_response import TransactionsResponse
 from swagger_client.models.transactions_wrapper import TransactionsWrapper
+from swagger_client.models.user import User
+from swagger_client.models.user_response import UserResponse
+from swagger_client.models.user_wrapper import UserWrapper
 from swagger_client.models.budget_detail import BudgetDetail
 from swagger_client.models.category_group_with_categories import CategoryGroupWithCategories
 from swagger_client.models.month_detail import MonthDetail

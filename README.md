@@ -97,6 +97,7 @@ Class | Method | HTTP request | Description
 *TransactionsApi* | [**get_transactions_by_category**](docs/TransactionsApi.md#get_transactions_by_category) | **GET** /budgets/{budget_id}/categories/{category_id}/transactions | List category transactions
 *TransactionsApi* | [**get_transactions_by_id**](docs/TransactionsApi.md#get_transactions_by_id) | **GET** /budgets/{budget_id}/transactions/{transaction_id} | Single transaction
 *TransactionsApi* | [**update_transaction**](docs/TransactionsApi.md#update_transaction) | **PUT** /budgets/{budget_id}/transactions/{transaction_id} | Updates an existing transaction
+*UserApi* | [**get_user**](docs/UserApi.md#get_user) | **GET** /user | User info
 
 
 ## Documentation For Models
@@ -154,6 +155,9 @@ Class | Method | HTTP request | Description
  - [TransactionWrapper](docs/TransactionWrapper.md)
  - [TransactionsResponse](docs/TransactionsResponse.md)
  - [TransactionsWrapper](docs/TransactionsWrapper.md)
+ - [User](docs/User.md)
+ - [UserResponse](docs/UserResponse.md)
+ - [UserWrapper](docs/UserWrapper.md)
  - [BudgetDetail](docs/BudgetDetail.md)
  - [CategoryGroupWithCategories](docs/CategoryGroupWithCategories.md)
  - [MonthDetail](docs/MonthDetail.md)
