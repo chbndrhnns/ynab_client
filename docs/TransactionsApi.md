@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**get_transactions_by_account**](TransactionsApi.md#get_transactions_by_account) | **GET** /budgets/{budget_id}/accounts/{account_id}/transactions | List account transactions
 [**get_transactions_by_category**](TransactionsApi.md#get_transactions_by_category) | **GET** /budgets/{budget_id}/categories/{category_id}/transactions | List category transactions
 [**get_transactions_by_id**](TransactionsApi.md#get_transactions_by_id) | **GET** /budgets/{budget_id}/transactions/{transaction_id} | Single transaction
+[**get_transactions_by_payee**](TransactionsApi.md#get_transactions_by_payee) | **GET** /budgets/{budget_id}/payees/{payee_id}/transactions | List payee transactions
 [**update_transaction**](TransactionsApi.md#update_transaction) | **PUT** /budgets/{budget_id}/transactions/{transaction_id} | Updates an existing transaction
 
 
@@ -343,6 +344,64 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**TransactionResponse**](TransactionResponse.md)
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_transactions_by_payee**
+> TransactionsResponse get_transactions_by_payee(budget_id, payee_id, since_date=since_date)
+
+List payee transactions
+
+Returns all transactions for a specified payee
+
+### Example
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: bearer
+configuration = swagger_client.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = swagger_client.TransactionsApi(swagger_client.ApiClient(configuration))
+budget_id = 'budget_id_example' # str | The ID of the Budget.
+payee_id = 'payee_id_example' # str | The ID of the Payee.
+since_date = '2013-10-20' # date | Only return transactions on or after this date. (optional)
+
+try:
+    # List payee transactions
+    api_response = api_instance.get_transactions_by_payee(budget_id, payee_id, since_date=since_date)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TransactionsApi->get_transactions_by_payee: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **budget_id** | [**str**](.md)| The ID of the Budget. | 
+ **payee_id** | [**str**](.md)| The ID of the Payee. | 
+ **since_date** | **date**| Only return transactions on or after this date. | [optional] 
+
+### Return type
+
+[**TransactionsResponse**](TransactionsResponse.md)
 
 ### Authorization
 
