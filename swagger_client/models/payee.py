@@ -32,23 +32,27 @@ class Payee(object):
     """
     swagger_types = {
         'id': 'str',
-        'name': 'str'
+        'name': 'str',
+        'deleted': 'bool'
     }
 
     attribute_map = {
         'id': 'id',
-        'name': 'name'
+        'name': 'name',
+        'deleted': 'deleted'
     }
 
-    def __init__(self, id=None, name=None):  # noqa: E501
+    def __init__(self, id=None, name=None, deleted=None):  # noqa: E501
         """Payee - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
         self._name = None
+        self._deleted = None
         self.discriminator = None
 
         self.id = id
         self.name = name
+        self.deleted = deleted
 
     @property
     def id(self):
@@ -95,6 +99,31 @@ class Payee(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def deleted(self):
+        """Gets the deleted of this Payee.  # noqa: E501
+
+        Whether or not the payee has been deleted.  Deleted payees will only be included in delta requests.  # noqa: E501
+
+        :return: The deleted of this Payee.  # noqa: E501
+        :rtype: bool
+        """
+        return self._deleted
+
+    @deleted.setter
+    def deleted(self, deleted):
+        """Sets the deleted of this Payee.
+
+        Whether or not the payee has been deleted.  Deleted payees will only be included in delta requests.  # noqa: E501
+
+        :param deleted: The deleted of this Payee.  # noqa: E501
+        :type: bool
+        """
+        if deleted is None:
+            raise ValueError("Invalid value for `deleted`, must not be `None`")  # noqa: E501
+
+        self._deleted = deleted
 
     def to_dict(self):
         """Returns the model properties as a dict"""

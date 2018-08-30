@@ -33,7 +33,7 @@ class SaveTransaction(object):
     swagger_types = {
         'account_id': 'str',
         'date': 'date',
-        'amount': 'float',
+        'amount': 'int',
         'cleared': 'str',
         'approved': 'bool'
     }
@@ -117,7 +117,7 @@ class SaveTransaction(object):
         The transaction amount in milliunits format  # noqa: E501
 
         :return: The amount of this SaveTransaction.  # noqa: E501
-        :rtype: float
+        :rtype: int
         """
         return self._amount
 
@@ -128,7 +128,7 @@ class SaveTransaction(object):
         The transaction amount in milliunits format  # noqa: E501
 
         :param amount: The amount of this SaveTransaction.  # noqa: E501
-        :type: float
+        :type: int
         """
         if amount is None:
             raise ValueError("Invalid value for `amount`, must not be `None`")  # noqa: E501

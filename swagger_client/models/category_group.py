@@ -33,26 +33,30 @@ class CategoryGroup(object):
     swagger_types = {
         'id': 'str',
         'name': 'str',
-        'hidden': 'bool'
+        'hidden': 'bool',
+        'deleted': 'bool'
     }
 
     attribute_map = {
         'id': 'id',
         'name': 'name',
-        'hidden': 'hidden'
+        'hidden': 'hidden',
+        'deleted': 'deleted'
     }
 
-    def __init__(self, id=None, name=None, hidden=None):  # noqa: E501
+    def __init__(self, id=None, name=None, hidden=None, deleted=None):  # noqa: E501
         """CategoryGroup - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
         self._name = None
         self._hidden = None
+        self._deleted = None
         self.discriminator = None
 
         self.id = id
         self.name = name
         self.hidden = hidden
+        self.deleted = deleted
 
     @property
     def id(self):
@@ -124,6 +128,31 @@ class CategoryGroup(object):
             raise ValueError("Invalid value for `hidden`, must not be `None`")  # noqa: E501
 
         self._hidden = hidden
+
+    @property
+    def deleted(self):
+        """Gets the deleted of this CategoryGroup.  # noqa: E501
+
+        Whether or not the category group has been deleted.  Deleted category groups will only be included in delta requests.  # noqa: E501
+
+        :return: The deleted of this CategoryGroup.  # noqa: E501
+        :rtype: bool
+        """
+        return self._deleted
+
+    @deleted.setter
+    def deleted(self, deleted):
+        """Sets the deleted of this CategoryGroup.
+
+        Whether or not the category group has been deleted.  Deleted category groups will only be included in delta requests.  # noqa: E501
+
+        :param deleted: The deleted of this CategoryGroup.  # noqa: E501
+        :type: bool
+        """
+        if deleted is None:
+            raise ValueError("Invalid value for `deleted`, must not be `None`")  # noqa: E501
+
+        self._deleted = deleted
 
     def to_dict(self):
         """Returns the model properties as a dict"""

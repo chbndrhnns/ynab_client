@@ -1,11 +1,9 @@
-# Payee
+# BudgetSettingsResponse
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** |  | 
-**name** | **str** |  | 
-**deleted** | **bool** | Whether or not the payee has been deleted.  Deleted payees will only be included in delta requests. | 
+**data** | [**BudgetSettingsWrapper**](BudgetSettingsWrapper.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

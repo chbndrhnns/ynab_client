@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **account_id** | **str** |  | 
 **date** | **date** |  | 
-**amount** | **float** | The transaction amount in milliunits format | 
+**amount** | **int** | The transaction amount in milliunits format | 
 **cleared** | **str** | The cleared status of the transaction | [optional] 
 **approved** | **bool** | Whether or not the transaction is approved.  If not supplied, transaction will be unapproved by default. | [optional] 
 

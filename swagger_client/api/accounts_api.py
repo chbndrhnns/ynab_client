@@ -43,7 +43,7 @@ class AccountsApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str budget_id: The ID of the Budget. (required)
+        :param str budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
         :param str account_id: The ID of the Account. (required)
         :return: AccountResponse
                  If the method is called asynchronously,
@@ -66,7 +66,7 @@ class AccountsApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str budget_id: The ID of the Budget. (required)
+        :param str budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
         :param str account_id: The ID of the Account. (required)
         :return: AccountResponse
                  If the method is called asynchronously,
@@ -146,7 +146,7 @@ class AccountsApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str budget_id: The ID of the Budget. (required)
+        :param str budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
         :return: AccountsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -168,7 +168,7 @@ class AccountsApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str budget_id: The ID of the Budget. (required)
+        :param str budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
         :return: AccountsResponse
                  If the method is called asynchronously,
                  returns the request thread.

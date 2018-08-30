@@ -38,8 +38,10 @@ class ScheduledTransactionDetail(object):
         'date_first': 'date',
         'date_next': 'date',
         'frequency': 'str',
-        'amount': 'float',
+        'amount': 'int',
         'account_id': 'str',
+        'deleted': 'bool',
+        'account_name': 'str',
         'subtransactions': 'list[ScheduledSubTransaction]'
     }
 
@@ -50,10 +52,12 @@ class ScheduledTransactionDetail(object):
         'frequency': 'frequency',
         'amount': 'amount',
         'account_id': 'account_id',
+        'deleted': 'deleted',
+        'account_name': 'account_name',
         'subtransactions': 'subtransactions'
     }
 
-    def __init__(self, id=None, date_first=None, date_next=None, frequency=None, amount=None, account_id=None, subtransactions=None):  # noqa: E501
+    def __init__(self, id=None, date_first=None, date_next=None, frequency=None, amount=None, account_id=None, deleted=None, account_name=None, subtransactions=None):  # noqa: E501
         """ScheduledTransactionDetail - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -62,6 +66,8 @@ class ScheduledTransactionDetail(object):
         self._frequency = None
         self._amount = None
         self._account_id = None
+        self._deleted = None
+        self._account_name = None
         self._subtransactions = None
         self.discriminator = None
 
@@ -71,6 +77,8 @@ class ScheduledTransactionDetail(object):
         self.frequency = frequency
         self.amount = amount
         self.account_id = account_id
+        self.deleted = deleted
+        self.account_name = account_name
         self.subtransactions = subtransactions
 
     @property
@@ -182,7 +190,7 @@ class ScheduledTransactionDetail(object):
         The scheduled transaction amount in milliunits format  # noqa: E501
 
         :return: The amount of this ScheduledTransactionDetail.  # noqa: E501
-        :rtype: float
+        :rtype: int
         """
         return self._amount
 
@@ -193,7 +201,7 @@ class ScheduledTransactionDetail(object):
         The scheduled transaction amount in milliunits format  # noqa: E501
 
         :param amount: The amount of this ScheduledTransactionDetail.  # noqa: E501
-        :type: float
+        :type: int
         """
         if amount is None:
             raise ValueError("Invalid value for `amount`, must not be `None`")  # noqa: E501
@@ -224,10 +232,58 @@ class ScheduledTransactionDetail(object):
         self._account_id = account_id
 
     @property
+    def deleted(self):
+        """Gets the deleted of this ScheduledTransactionDetail.  # noqa: E501
+
+        Whether or not the scheduled transaction has been deleted.  Deleted scheduled transactions will only be included in delta requests.  # noqa: E501
+
+        :return: The deleted of this ScheduledTransactionDetail.  # noqa: E501
+        :rtype: bool
+        """
+        return self._deleted
+
+    @deleted.setter
+    def deleted(self, deleted):
+        """Sets the deleted of this ScheduledTransactionDetail.
+
+        Whether or not the scheduled transaction has been deleted.  Deleted scheduled transactions will only be included in delta requests.  # noqa: E501
+
+        :param deleted: The deleted of this ScheduledTransactionDetail.  # noqa: E501
+        :type: bool
+        """
+        if deleted is None:
+            raise ValueError("Invalid value for `deleted`, must not be `None`")  # noqa: E501
+
+        self._deleted = deleted
+
+    @property
+    def account_name(self):
+        """Gets the account_name of this ScheduledTransactionDetail.  # noqa: E501
+
+
+        :return: The account_name of this ScheduledTransactionDetail.  # noqa: E501
+        :rtype: str
+        """
+        return self._account_name
+
+    @account_name.setter
+    def account_name(self, account_name):
+        """Sets the account_name of this ScheduledTransactionDetail.
+
+
+        :param account_name: The account_name of this ScheduledTransactionDetail.  # noqa: E501
+        :type: str
+        """
+        if account_name is None:
+            raise ValueError("Invalid value for `account_name`, must not be `None`")  # noqa: E501
+
+        self._account_name = account_name
+
+    @property
     def subtransactions(self):
         """Gets the subtransactions of this ScheduledTransactionDetail.  # noqa: E501
 
-        If a split scheduled transaction, the sub-transactions.  # noqa: E501
+        If a split scheduled transaction, the subtransactions.  # noqa: E501
 
         :return: The subtransactions of this ScheduledTransactionDetail.  # noqa: E501
         :rtype: list[ScheduledSubTransaction]
@@ -238,7 +294,7 @@ class ScheduledTransactionDetail(object):
     def subtransactions(self, subtransactions):
         """Sets the subtransactions of this ScheduledTransactionDetail.
 
-        If a split scheduled transaction, the sub-transactions.  # noqa: E501
+        If a split scheduled transaction, the subtransactions.  # noqa: E501
 
         :param subtransactions: The subtransactions of this ScheduledTransactionDetail.  # noqa: E501
         :type: list[ScheduledSubTransaction]

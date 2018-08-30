@@ -43,7 +43,7 @@ class ScheduledTransactionsApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str budget_id: The ID of the Budget. (required)
+        :param str budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
         :param str scheduled_transaction_id: The ID of the Scheduled Transaction. (required)
         :return: ScheduledTransactionResponse
                  If the method is called asynchronously,
@@ -66,7 +66,7 @@ class ScheduledTransactionsApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str budget_id: The ID of the Budget. (required)
+        :param str budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
         :param str scheduled_transaction_id: The ID of the Scheduled Transaction. (required)
         :return: ScheduledTransactionResponse
                  If the method is called asynchronously,
@@ -146,7 +146,7 @@ class ScheduledTransactionsApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str budget_id: The ID of the Budget. (required)
+        :param str budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
         :return: ScheduledTransactionsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -168,7 +168,7 @@ class ScheduledTransactionsApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str budget_id: The ID of the Budget. (required)
+        :param str budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
         :return: ScheduledTransactionsResponse
                  If the method is called asynchronously,
                  returns the request thread.

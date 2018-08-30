@@ -35,8 +35,9 @@ class ScheduledTransactionSummary(object):
         'date_first': 'date',
         'date_next': 'date',
         'frequency': 'str',
-        'amount': 'float',
-        'account_id': 'str'
+        'amount': 'int',
+        'account_id': 'str',
+        'deleted': 'bool'
     }
 
     attribute_map = {
@@ -45,10 +46,11 @@ class ScheduledTransactionSummary(object):
         'date_next': 'date_next',
         'frequency': 'frequency',
         'amount': 'amount',
-        'account_id': 'account_id'
+        'account_id': 'account_id',
+        'deleted': 'deleted'
     }
 
-    def __init__(self, id=None, date_first=None, date_next=None, frequency=None, amount=None, account_id=None):  # noqa: E501
+    def __init__(self, id=None, date_first=None, date_next=None, frequency=None, amount=None, account_id=None, deleted=None):  # noqa: E501
         """ScheduledTransactionSummary - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -57,6 +59,7 @@ class ScheduledTransactionSummary(object):
         self._frequency = None
         self._amount = None
         self._account_id = None
+        self._deleted = None
         self.discriminator = None
 
         self.id = id
@@ -65,6 +68,7 @@ class ScheduledTransactionSummary(object):
         self.frequency = frequency
         self.amount = amount
         self.account_id = account_id
+        self.deleted = deleted
 
     @property
     def id(self):
@@ -175,7 +179,7 @@ class ScheduledTransactionSummary(object):
         The scheduled transaction amount in milliunits format  # noqa: E501
 
         :return: The amount of this ScheduledTransactionSummary.  # noqa: E501
-        :rtype: float
+        :rtype: int
         """
         return self._amount
 
@@ -186,7 +190,7 @@ class ScheduledTransactionSummary(object):
         The scheduled transaction amount in milliunits format  # noqa: E501
 
         :param amount: The amount of this ScheduledTransactionSummary.  # noqa: E501
-        :type: float
+        :type: int
         """
         if amount is None:
             raise ValueError("Invalid value for `amount`, must not be `None`")  # noqa: E501
@@ -215,6 +219,31 @@ class ScheduledTransactionSummary(object):
             raise ValueError("Invalid value for `account_id`, must not be `None`")  # noqa: E501
 
         self._account_id = account_id
+
+    @property
+    def deleted(self):
+        """Gets the deleted of this ScheduledTransactionSummary.  # noqa: E501
+
+        Whether or not the scheduled transaction has been deleted.  Deleted scheduled transactions will only be included in delta requests.  # noqa: E501
+
+        :return: The deleted of this ScheduledTransactionSummary.  # noqa: E501
+        :rtype: bool
+        """
+        return self._deleted
+
+    @deleted.setter
+    def deleted(self, deleted):
+        """Sets the deleted of this ScheduledTransactionSummary.
+
+        Whether or not the scheduled transaction has been deleted.  Deleted scheduled transactions will only be included in delta requests.  # noqa: E501
+
+        :param deleted: The deleted of this ScheduledTransactionSummary.  # noqa: E501
+        :type: bool
+        """
+        if deleted is None:
+            raise ValueError("Invalid value for `deleted`, must not be `None`")  # noqa: E501
+
+        self._deleted = deleted
 
     def to_dict(self):
         """Returns the model properties as a dict"""

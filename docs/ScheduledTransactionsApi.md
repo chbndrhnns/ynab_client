@@ -31,7 +31,7 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = swagger_client.ScheduledTransactionsApi(swagger_client.ApiClient(configuration))
-budget_id = 'budget_id_example' # str | The ID of the Budget.
+budget_id = 'budget_id_example' # str | The ID of the Budget.  \"last-used\" can also be used to specify the last used budget.
 scheduled_transaction_id = 'scheduled_transaction_id_example' # str | The ID of the Scheduled Transaction.
 
 try:
@@ -46,7 +46,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget_id** | [**str**](.md)| The ID of the Budget. | 
+ **budget_id** | [**str**](.md)| The ID of the Budget.  \&quot;last-used\&quot; can also be used to specify the last used budget. | 
  **scheduled_transaction_id** | [**str**](.md)| The ID of the Scheduled Transaction. | 
 
 ### Return type
@@ -87,7 +87,7 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = swagger_client.ScheduledTransactionsApi(swagger_client.ApiClient(configuration))
-budget_id = 'budget_id_example' # str | The ID of the Budget.
+budget_id = 'budget_id_example' # str | The ID of the Budget.  \"last-used\" can also be used to specify the last used budget.
 
 try:
     # List scheduled transactions
@@ -101,7 +101,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget_id** | [**str**](.md)| The ID of the Budget. | 
+ **budget_id** | [**str**](.md)| The ID of the Budget.  \&quot;last-used\&quot; can also be used to specify the last used budget. | 
 
 ### Return type
 

@@ -1,11 +1,9 @@
-# Payee
+# HybridTransactionsWrapper
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** |  | 
-**name** | **str** |  | 
-**deleted** | **bool** | Whether or not the payee has been deleted.  Deleted payees will only be included in delta requests. | 
+**transactions** | [**list[HybridTransaction]**](HybridTransaction.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

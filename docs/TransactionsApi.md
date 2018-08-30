@@ -6,10 +6,10 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**bulk_create_transactions**](TransactionsApi.md#bulk_create_transactions) | **POST** /budgets/{budget_id}/transactions/bulk | Bulk create transactions
 [**create_transaction**](TransactionsApi.md#create_transaction) | **POST** /budgets/{budget_id}/transactions | Create new transaction
+[**get_transaction_by_id**](TransactionsApi.md#get_transaction_by_id) | **GET** /budgets/{budget_id}/transactions/{transaction_id} | Single transaction
 [**get_transactions**](TransactionsApi.md#get_transactions) | **GET** /budgets/{budget_id}/transactions | List transactions
 [**get_transactions_by_account**](TransactionsApi.md#get_transactions_by_account) | **GET** /budgets/{budget_id}/accounts/{account_id}/transactions | List account transactions
 [**get_transactions_by_category**](TransactionsApi.md#get_transactions_by_category) | **GET** /budgets/{budget_id}/categories/{category_id}/transactions | List category transactions
-[**get_transactions_by_id**](TransactionsApi.md#get_transactions_by_id) | **GET** /budgets/{budget_id}/transactions/{transaction_id} | Single transaction
 [**get_transactions_by_payee**](TransactionsApi.md#get_transactions_by_payee) | **GET** /budgets/{budget_id}/payees/{payee_id}/transactions | List payee transactions
 [**update_transaction**](TransactionsApi.md#update_transaction) | **PUT** /budgets/{budget_id}/transactions/{transaction_id} | Updates an existing transaction
 
@@ -37,7 +37,7 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = swagger_client.TransactionsApi(swagger_client.ApiClient(configuration))
-budget_id = 'budget_id_example' # str | The ID of the Budget.
+budget_id = 'budget_id_example' # str | The ID of the Budget.  \"last-used\" can also be used to specify the last used budget.
 transactions = swagger_client.BulkTransactions() # BulkTransactions | The list of Transactions to create.
 
 try:
@@ -52,7 +52,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget_id** | [**str**](.md)| The ID of the Budget. | 
+ **budget_id** | [**str**](.md)| The ID of the Budget.  \&quot;last-used\&quot; can also be used to specify the last used budget. | 
  **transactions** | [**BulkTransactions**](BulkTransactions.md)| The list of Transactions to create. | 
 
 ### Return type
@@ -93,7 +93,7 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = swagger_client.TransactionsApi(swagger_client.ApiClient(configuration))
-budget_id = 'budget_id_example' # str | The ID of the Budget.
+budget_id = 'budget_id_example' # str | The ID of the Budget.  \"last-used\" can also be used to specify the last used budget.
 transaction = swagger_client.SaveTransactionWrapper() # SaveTransactionWrapper | The Transaction to create.
 
 try:
@@ -108,8 +108,64 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget_id** | [**str**](.md)| The ID of the Budget. | 
+ **budget_id** | [**str**](.md)| The ID of the Budget.  \&quot;last-used\&quot; can also be used to specify the last used budget. | 
  **transaction** | [**SaveTransactionWrapper**](SaveTransactionWrapper.md)| The Transaction to create. | 
+
+### Return type
+
+[**TransactionResponse**](TransactionResponse.md)
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_transaction_by_id**
+> TransactionResponse get_transaction_by_id(budget_id, transaction_id)
+
+Single transaction
+
+Returns a single transaction
+
+### Example
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: bearer
+configuration = swagger_client.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = swagger_client.TransactionsApi(swagger_client.ApiClient(configuration))
+budget_id = 'budget_id_example' # str | The ID of the Budget.  \"last-used\" can also be used to specify the last used budget.
+transaction_id = 'transaction_id_example' # str | The ID of the Transaction.
+
+try:
+    # Single transaction
+    api_response = api_instance.get_transaction_by_id(budget_id, transaction_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TransactionsApi->get_transaction_by_id: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **budget_id** | [**str**](.md)| The ID of the Budget.  \&quot;last-used\&quot; can also be used to specify the last used budget. | 
+ **transaction_id** | [**str**](.md)| The ID of the Transaction. | 
 
 ### Return type
 
@@ -149,9 +205,9 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = swagger_client.TransactionsApi(swagger_client.ApiClient(configuration))
-budget_id = 'budget_id_example' # str | The ID of the Budget.
+budget_id = 'budget_id_example' # str | The ID of the Budget.  \"last-used\" can also be used to specify the last used budget.
 since_date = '2013-10-20' # date | Only return transactions on or after this date. (optional)
-type = 'type_example' # str | Only return transactions of a certain type (i.e. 'uncategorized', 'unapproved') (optional)
+type = 'type_example' # str | Only return transactions of a certain type ('uncategorized' and 'unapproved' are currently supported) (optional)
 
 try:
     # List transactions
@@ -165,9 +221,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget_id** | [**str**](.md)| The ID of the Budget. | 
+ **budget_id** | [**str**](.md)| The ID of the Budget.  \&quot;last-used\&quot; can also be used to specify the last used budget. | 
  **since_date** | **date**| Only return transactions on or after this date. | [optional] 
- **type** | **str**| Only return transactions of a certain type (i.e. &#39;uncategorized&#39;, &#39;unapproved&#39;) | [optional] 
+ **type** | **str**| Only return transactions of a certain type (&#39;uncategorized&#39; and &#39;unapproved&#39; are currently supported) | [optional] 
 
 ### Return type
 
@@ -185,7 +241,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_transactions_by_account**
-> TransactionsResponse get_transactions_by_account(budget_id, account_id, since_date=since_date)
+> TransactionsResponse get_transactions_by_account(budget_id, account_id, since_date=since_date, type=type)
 
 List account transactions
 
@@ -207,13 +263,14 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = swagger_client.TransactionsApi(swagger_client.ApiClient(configuration))
-budget_id = 'budget_id_example' # str | The ID of the Budget.
+budget_id = 'budget_id_example' # str | The ID of the Budget.  \"last-used\" can also be used to specify the last used budget.
 account_id = 'account_id_example' # str | The ID of the Account.
 since_date = '2013-10-20' # date | Only return transactions on or after this date. (optional)
+type = 'type_example' # str | Only return transactions of a certain type (i.e. 'uncategorized', 'unapproved') (optional)
 
 try:
     # List account transactions
-    api_response = api_instance.get_transactions_by_account(budget_id, account_id, since_date=since_date)
+    api_response = api_instance.get_transactions_by_account(budget_id, account_id, since_date=since_date, type=type)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling TransactionsApi->get_transactions_by_account: %s\n" % e)
@@ -223,9 +280,10 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget_id** | [**str**](.md)| The ID of the Budget. | 
+ **budget_id** | [**str**](.md)| The ID of the Budget.  \&quot;last-used\&quot; can also be used to specify the last used budget. | 
  **account_id** | [**str**](.md)| The ID of the Account. | 
  **since_date** | **date**| Only return transactions on or after this date. | [optional] 
+ **type** | **str**| Only return transactions of a certain type (i.e. &#39;uncategorized&#39;, &#39;unapproved&#39;) | [optional] 
 
 ### Return type
 
@@ -243,7 +301,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_transactions_by_category**
-> TransactionsResponse get_transactions_by_category(budget_id, category_id, since_date=since_date)
+> HybridTransactionsResponse get_transactions_by_category(budget_id, category_id, since_date=since_date, type=type)
 
 List category transactions
 
@@ -265,13 +323,14 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = swagger_client.TransactionsApi(swagger_client.ApiClient(configuration))
-budget_id = 'budget_id_example' # str | The ID of the Budget.
+budget_id = 'budget_id_example' # str | The ID of the Budget.  \"last-used\" can also be used to specify the last used budget.
 category_id = 'category_id_example' # str | The ID of the Category.
 since_date = '2013-10-20' # date | Only return transactions on or after this date. (optional)
+type = 'type_example' # str | Only return transactions of a certain type (i.e. 'uncategorized', 'unapproved') (optional)
 
 try:
     # List category transactions
-    api_response = api_instance.get_transactions_by_category(budget_id, category_id, since_date=since_date)
+    api_response = api_instance.get_transactions_by_category(budget_id, category_id, since_date=since_date, type=type)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling TransactionsApi->get_transactions_by_category: %s\n" % e)
@@ -281,69 +340,14 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget_id** | [**str**](.md)| The ID of the Budget. | 
+ **budget_id** | [**str**](.md)| The ID of the Budget.  \&quot;last-used\&quot; can also be used to specify the last used budget. | 
  **category_id** | [**str**](.md)| The ID of the Category. | 
  **since_date** | **date**| Only return transactions on or after this date. | [optional] 
+ **type** | **str**| Only return transactions of a certain type (i.e. &#39;uncategorized&#39;, &#39;unapproved&#39;) | [optional] 
 
 ### Return type
 
-[**TransactionsResponse**](TransactionsResponse.md)
-
-### Authorization
-
-[bearer](../README.md#bearer)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_transactions_by_id**
-> TransactionResponse get_transactions_by_id(budget_id, transaction_id)
-
-Single transaction
-
-Returns a single transaction
-
-### Example
-```python
-from __future__ import print_function
-import time
-import swagger_client
-from swagger_client.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: bearer
-configuration = swagger_client.Configuration()
-configuration.api_key['Authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Authorization'] = 'Bearer'
-
-# create an instance of the API class
-api_instance = swagger_client.TransactionsApi(swagger_client.ApiClient(configuration))
-budget_id = 'budget_id_example' # str | The ID of the Budget.
-transaction_id = 'transaction_id_example' # str | The ID of the Transaction.
-
-try:
-    # Single transaction
-    api_response = api_instance.get_transactions_by_id(budget_id, transaction_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TransactionsApi->get_transactions_by_id: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **budget_id** | [**str**](.md)| The ID of the Budget. | 
- **transaction_id** | [**str**](.md)| The ID of the Transaction. | 
-
-### Return type
-
-[**TransactionResponse**](TransactionResponse.md)
+[**HybridTransactionsResponse**](HybridTransactionsResponse.md)
 
 ### Authorization
 
@@ -357,7 +361,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_transactions_by_payee**
-> TransactionsResponse get_transactions_by_payee(budget_id, payee_id, since_date=since_date)
+> HybridTransactionsResponse get_transactions_by_payee(budget_id, payee_id, since_date=since_date, type=type)
 
 List payee transactions
 
@@ -379,13 +383,14 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = swagger_client.TransactionsApi(swagger_client.ApiClient(configuration))
-budget_id = 'budget_id_example' # str | The ID of the Budget.
+budget_id = 'budget_id_example' # str | The ID of the Budget.  \"last-used\" can also be used to specify the last used budget.
 payee_id = 'payee_id_example' # str | The ID of the Payee.
 since_date = '2013-10-20' # date | Only return transactions on or after this date. (optional)
+type = 'type_example' # str | Only return transactions of a certain type (i.e. 'uncategorized', 'unapproved') (optional)
 
 try:
     # List payee transactions
-    api_response = api_instance.get_transactions_by_payee(budget_id, payee_id, since_date=since_date)
+    api_response = api_instance.get_transactions_by_payee(budget_id, payee_id, since_date=since_date, type=type)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling TransactionsApi->get_transactions_by_payee: %s\n" % e)
@@ -395,13 +400,14 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget_id** | [**str**](.md)| The ID of the Budget. | 
+ **budget_id** | [**str**](.md)| The ID of the Budget.  \&quot;last-used\&quot; can also be used to specify the last used budget. | 
  **payee_id** | [**str**](.md)| The ID of the Payee. | 
  **since_date** | **date**| Only return transactions on or after this date. | [optional] 
+ **type** | **str**| Only return transactions of a certain type (i.e. &#39;uncategorized&#39;, &#39;unapproved&#39;) | [optional] 
 
 ### Return type
 
-[**TransactionsResponse**](TransactionsResponse.md)
+[**HybridTransactionsResponse**](HybridTransactionsResponse.md)
 
 ### Authorization
 
@@ -437,7 +443,7 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = swagger_client.TransactionsApi(swagger_client.ApiClient(configuration))
-budget_id = 'budget_id_example' # str | The ID of the Budget.
+budget_id = 'budget_id_example' # str | The ID of the Budget.  \"last-used\" can also be used to specify the last used budget.
 transaction_id = 'transaction_id_example' # str | The ID of the Transaction.
 transaction = swagger_client.SaveTransactionWrapper() # SaveTransactionWrapper | The Transaction to update.
 
@@ -453,7 +459,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget_id** | [**str**](.md)| The ID of the Budget. | 
+ **budget_id** | [**str**](.md)| The ID of the Budget.  \&quot;last-used\&quot; can also be used to specify the last used budget. | 
  **transaction_id** | [**str**](.md)| The ID of the Transaction. | 
  **transaction** | [**SaveTransactionWrapper**](SaveTransactionWrapper.md)| The Transaction to update. | 
 

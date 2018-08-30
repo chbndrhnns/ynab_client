@@ -36,10 +36,12 @@ class TransactionDetail(object):
     swagger_types = {
         'id': 'str',
         'date': 'date',
-        'amount': 'float',
+        'amount': 'int',
         'cleared': 'str',
         'approved': 'bool',
         'account_id': 'str',
+        'deleted': 'bool',
+        'account_name': 'str',
         'subtransactions': 'list[SubTransaction]'
     }
 
@@ -50,10 +52,12 @@ class TransactionDetail(object):
         'cleared': 'cleared',
         'approved': 'approved',
         'account_id': 'account_id',
+        'deleted': 'deleted',
+        'account_name': 'account_name',
         'subtransactions': 'subtransactions'
     }
 
-    def __init__(self, id=None, date=None, amount=None, cleared=None, approved=None, account_id=None, subtransactions=None):  # noqa: E501
+    def __init__(self, id=None, date=None, amount=None, cleared=None, approved=None, account_id=None, deleted=None, account_name=None, subtransactions=None):  # noqa: E501
         """TransactionDetail - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -62,6 +66,8 @@ class TransactionDetail(object):
         self._cleared = None
         self._approved = None
         self._account_id = None
+        self._deleted = None
+        self._account_name = None
         self._subtransactions = None
         self.discriminator = None
 
@@ -71,6 +77,8 @@ class TransactionDetail(object):
         self.cleared = cleared
         self.approved = approved
         self.account_id = account_id
+        self.deleted = deleted
+        self.account_name = account_name
         self.subtransactions = subtransactions
 
     @property
@@ -126,7 +134,7 @@ class TransactionDetail(object):
         The transaction amount in milliunits format  # noqa: E501
 
         :return: The amount of this TransactionDetail.  # noqa: E501
-        :rtype: float
+        :rtype: int
         """
         return self._amount
 
@@ -137,7 +145,7 @@ class TransactionDetail(object):
         The transaction amount in milliunits format  # noqa: E501
 
         :param amount: The amount of this TransactionDetail.  # noqa: E501
-        :type: float
+        :type: int
         """
         if amount is None:
             raise ValueError("Invalid value for `amount`, must not be `None`")  # noqa: E501
@@ -224,10 +232,58 @@ class TransactionDetail(object):
         self._account_id = account_id
 
     @property
+    def deleted(self):
+        """Gets the deleted of this TransactionDetail.  # noqa: E501
+
+        Whether or not the transaction has been deleted.  Deleted transactions will only be included in delta requests.  # noqa: E501
+
+        :return: The deleted of this TransactionDetail.  # noqa: E501
+        :rtype: bool
+        """
+        return self._deleted
+
+    @deleted.setter
+    def deleted(self, deleted):
+        """Sets the deleted of this TransactionDetail.
+
+        Whether or not the transaction has been deleted.  Deleted transactions will only be included in delta requests.  # noqa: E501
+
+        :param deleted: The deleted of this TransactionDetail.  # noqa: E501
+        :type: bool
+        """
+        if deleted is None:
+            raise ValueError("Invalid value for `deleted`, must not be `None`")  # noqa: E501
+
+        self._deleted = deleted
+
+    @property
+    def account_name(self):
+        """Gets the account_name of this TransactionDetail.  # noqa: E501
+
+
+        :return: The account_name of this TransactionDetail.  # noqa: E501
+        :rtype: str
+        """
+        return self._account_name
+
+    @account_name.setter
+    def account_name(self, account_name):
+        """Sets the account_name of this TransactionDetail.
+
+
+        :param account_name: The account_name of this TransactionDetail.  # noqa: E501
+        :type: str
+        """
+        if account_name is None:
+            raise ValueError("Invalid value for `account_name`, must not be `None`")  # noqa: E501
+
+        self._account_name = account_name
+
+    @property
     def subtransactions(self):
         """Gets the subtransactions of this TransactionDetail.  # noqa: E501
 
-        If a split transaction, the sub-transactions.  # noqa: E501
+        If a split transaction, the subtransactions.  # noqa: E501
 
         :return: The subtransactions of this TransactionDetail.  # noqa: E501
         :rtype: list[SubTransaction]
@@ -238,7 +294,7 @@ class TransactionDetail(object):
     def subtransactions(self, subtransactions):
         """Sets the subtransactions of this TransactionDetail.
 
-        If a split transaction, the sub-transactions.  # noqa: E501
+        If a split transaction, the subtransactions.  # noqa: E501
 
         :param subtransactions: The subtransactions of this TransactionDetail.  # noqa: E501
         :type: list[SubTransaction]

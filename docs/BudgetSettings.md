@@ -1,11 +1,10 @@
-# Payee
+# BudgetSettings
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** |  | 
-**name** | **str** |  | 
-**deleted** | **bool** | Whether or not the payee has been deleted.  Deleted payees will only be included in delta requests. | 
+**date_format** | [**DateFormat**](DateFormat.md) |  | 
+**currency_format** | [**CurrencyFormat**](CurrencyFormat.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -36,9 +36,10 @@ class Account(object):
         'type': 'str',
         'on_budget': 'bool',
         'closed': 'bool',
-        'balance': 'float',
-        'cleared_balance': 'float',
-        'uncleared_balance': 'float'
+        'balance': 'int',
+        'cleared_balance': 'int',
+        'uncleared_balance': 'int',
+        'deleted': 'bool'
     }
 
     attribute_map = {
@@ -49,10 +50,11 @@ class Account(object):
         'closed': 'closed',
         'balance': 'balance',
         'cleared_balance': 'cleared_balance',
-        'uncleared_balance': 'uncleared_balance'
+        'uncleared_balance': 'uncleared_balance',
+        'deleted': 'deleted'
     }
 
-    def __init__(self, id=None, name=None, type=None, on_budget=None, closed=None, balance=None, cleared_balance=None, uncleared_balance=None):  # noqa: E501
+    def __init__(self, id=None, name=None, type=None, on_budget=None, closed=None, balance=None, cleared_balance=None, uncleared_balance=None, deleted=None):  # noqa: E501
         """Account - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -63,6 +65,7 @@ class Account(object):
         self._balance = None
         self._cleared_balance = None
         self._uncleared_balance = None
+        self._deleted = None
         self.discriminator = None
 
         self.id = id
@@ -73,6 +76,7 @@ class Account(object):
         self.balance = balance
         self.cleared_balance = cleared_balance
         self.uncleared_balance = uncleared_balance
+        self.deleted = deleted
 
     @property
     def id(self):
@@ -124,6 +128,7 @@ class Account(object):
     def type(self):
         """Gets the type of this Account.  # noqa: E501
 
+        The type of account. Note: payPal, merchantAccount, investmentAccount, and mortgage types have been deprecated and will be removed in the future.  # noqa: E501
 
         :return: The type of this Account.  # noqa: E501
         :rtype: str
@@ -134,13 +139,14 @@ class Account(object):
     def type(self, type):
         """Sets the type of this Account.
 
+        The type of account. Note: payPal, merchantAccount, investmentAccount, and mortgage types have been deprecated and will be removed in the future.  # noqa: E501
 
         :param type: The type of this Account.  # noqa: E501
         :type: str
         """
         if type is None:
             raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
-        allowed_values = ["checking", "savings", "creditCard", "cash", "lineOfCredit", "merchantAccount", "payPal", "investmentAccount", "mortgage", "otherAsset", "otherLiability"]  # noqa: E501
+        allowed_values = ["checking", "savings", "cash", "creditCard", "lineOfCredit", "otherAsset", "otherLiability", "payPal", "merchantAccount", "investmentAccount", "mortgage"]  # noqa: E501
         if type not in allowed_values:
             raise ValueError(
                 "Invalid value for `type` ({0}), must be one of {1}"  # noqa: E501
@@ -206,7 +212,7 @@ class Account(object):
         The current balance of the account in milliunits format  # noqa: E501
 
         :return: The balance of this Account.  # noqa: E501
-        :rtype: float
+        :rtype: int
         """
         return self._balance
 
@@ -217,7 +223,7 @@ class Account(object):
         The current balance of the account in milliunits format  # noqa: E501
 
         :param balance: The balance of this Account.  # noqa: E501
-        :type: float
+        :type: int
         """
         if balance is None:
             raise ValueError("Invalid value for `balance`, must not be `None`")  # noqa: E501
@@ -231,7 +237,7 @@ class Account(object):
         The current cleared balance of the account in milliunits format  # noqa: E501
 
         :return: The cleared_balance of this Account.  # noqa: E501
-        :rtype: float
+        :rtype: int
         """
         return self._cleared_balance
 
@@ -242,7 +248,7 @@ class Account(object):
         The current cleared balance of the account in milliunits format  # noqa: E501
 
         :param cleared_balance: The cleared_balance of this Account.  # noqa: E501
-        :type: float
+        :type: int
         """
         if cleared_balance is None:
             raise ValueError("Invalid value for `cleared_balance`, must not be `None`")  # noqa: E501
@@ -256,7 +262,7 @@ class Account(object):
         The current uncleared balance of the account in milliunits format  # noqa: E501
 
         :return: The uncleared_balance of this Account.  # noqa: E501
-        :rtype: float
+        :rtype: int
         """
         return self._uncleared_balance
 
@@ -267,12 +273,37 @@ class Account(object):
         The current uncleared balance of the account in milliunits format  # noqa: E501
 
         :param uncleared_balance: The uncleared_balance of this Account.  # noqa: E501
-        :type: float
+        :type: int
         """
         if uncleared_balance is None:
             raise ValueError("Invalid value for `uncleared_balance`, must not be `None`")  # noqa: E501
 
         self._uncleared_balance = uncleared_balance
+
+    @property
+    def deleted(self):
+        """Gets the deleted of this Account.  # noqa: E501
+
+        Whether or not the account has been deleted.  Deleted accounts will only be included in delta requests.  # noqa: E501
+
+        :return: The deleted of this Account.  # noqa: E501
+        :rtype: bool
+        """
+        return self._deleted
+
+    @deleted.setter
+    def deleted(self, deleted):
+        """Sets the deleted of this Account.
+
+        Whether or not the account has been deleted.  Deleted accounts will only be included in delta requests.  # noqa: E501
+
+        :param deleted: The deleted of this Account.  # noqa: E501
+        :type: bool
+        """
+        if deleted is None:
+            raise ValueError("Invalid value for `deleted`, must not be `None`")  # noqa: E501
+
+        self._deleted = deleted
 
     def to_dict(self):
         """Returns the model properties as a dict"""

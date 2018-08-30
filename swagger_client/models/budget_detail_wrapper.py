@@ -34,7 +34,7 @@ class BudgetDetailWrapper(object):
     """
     swagger_types = {
         'budget': 'BudgetDetail',
-        'server_knowledge': 'float'
+        'server_knowledge': 'int'
     }
 
     attribute_map = {
@@ -82,7 +82,7 @@ class BudgetDetailWrapper(object):
         The knowledge of the server  # noqa: E501
 
         :return: The server_knowledge of this BudgetDetailWrapper.  # noqa: E501
-        :rtype: float
+        :rtype: int
         """
         return self._server_knowledge
 
@@ -93,7 +93,7 @@ class BudgetDetailWrapper(object):
         The knowledge of the server  # noqa: E501
 
         :param server_knowledge: The server_knowledge of this BudgetDetailWrapper.  # noqa: E501
-        :type: float
+        :type: int
         """
         if server_knowledge is None:
             raise ValueError("Invalid value for `server_knowledge`, must not be `None`")  # noqa: E501

@@ -43,7 +43,7 @@ class CategoriesApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str budget_id: The ID of the Budget. (required)
+        :param str budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
         :return: CategoriesResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -65,7 +65,7 @@ class CategoriesApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str budget_id: The ID of the Budget. (required)
+        :param str budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
         :return: CategoriesResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -138,7 +138,7 @@ class CategoriesApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str budget_id: The ID of the Budget. (required)
+        :param str budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
         :param str category_id: The ID of the Category. (required)
         :return: CategoryResponse
                  If the method is called asynchronously,
@@ -161,7 +161,7 @@ class CategoriesApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str budget_id: The ID of the Budget. (required)
+        :param str budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
         :param str category_id: The ID of the Category. (required)
         :return: CategoryResponse
                  If the method is called asynchronously,

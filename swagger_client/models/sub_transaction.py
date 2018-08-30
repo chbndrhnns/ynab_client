@@ -33,26 +33,30 @@ class SubTransaction(object):
     swagger_types = {
         'id': 'str',
         'transaction_id': 'str',
-        'amount': 'float'
+        'amount': 'int',
+        'deleted': 'bool'
     }
 
     attribute_map = {
         'id': 'id',
         'transaction_id': 'transaction_id',
-        'amount': 'amount'
+        'amount': 'amount',
+        'deleted': 'deleted'
     }
 
-    def __init__(self, id=None, transaction_id=None, amount=None):  # noqa: E501
+    def __init__(self, id=None, transaction_id=None, amount=None, deleted=None):  # noqa: E501
         """SubTransaction - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
         self._transaction_id = None
         self._amount = None
+        self._deleted = None
         self.discriminator = None
 
         self.id = id
         self.transaction_id = transaction_id
         self.amount = amount
+        self.deleted = deleted
 
     @property
     def id(self):
@@ -104,10 +108,10 @@ class SubTransaction(object):
     def amount(self):
         """Gets the amount of this SubTransaction.  # noqa: E501
 
-        The sub-transaction amount in milliunits format  # noqa: E501
+        The subtransaction amount in milliunits format  # noqa: E501
 
         :return: The amount of this SubTransaction.  # noqa: E501
-        :rtype: float
+        :rtype: int
         """
         return self._amount
 
@@ -115,15 +119,40 @@ class SubTransaction(object):
     def amount(self, amount):
         """Sets the amount of this SubTransaction.
 
-        The sub-transaction amount in milliunits format  # noqa: E501
+        The subtransaction amount in milliunits format  # noqa: E501
 
         :param amount: The amount of this SubTransaction.  # noqa: E501
-        :type: float
+        :type: int
         """
         if amount is None:
             raise ValueError("Invalid value for `amount`, must not be `None`")  # noqa: E501
 
         self._amount = amount
+
+    @property
+    def deleted(self):
+        """Gets the deleted of this SubTransaction.  # noqa: E501
+
+        Whether or not the subtransaction has been deleted.  Deleted subtransactions will only be included in delta requests.  # noqa: E501
+
+        :return: The deleted of this SubTransaction.  # noqa: E501
+        :rtype: bool
+        """
+        return self._deleted
+
+    @deleted.setter
+    def deleted(self, deleted):
+        """Sets the deleted of this SubTransaction.
+
+        Whether or not the subtransaction has been deleted.  Deleted subtransactions will only be included in delta requests.  # noqa: E501
+
+        :param deleted: The deleted of this SubTransaction.  # noqa: E501
+        :type: bool
+        """
+        if deleted is None:
+            raise ValueError("Invalid value for `deleted`, must not be `None`")  # noqa: E501
+
+        self._deleted = deleted
 
     def to_dict(self):
         """Returns the model properties as a dict"""

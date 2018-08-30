@@ -37,6 +37,9 @@ from swagger_client.models.accounts_response import AccountsResponse
 from swagger_client.models.accounts_wrapper import AccountsWrapper
 from swagger_client.models.budget_detail_response import BudgetDetailResponse
 from swagger_client.models.budget_detail_wrapper import BudgetDetailWrapper
+from swagger_client.models.budget_settings import BudgetSettings
+from swagger_client.models.budget_settings_response import BudgetSettingsResponse
+from swagger_client.models.budget_settings_wrapper import BudgetSettingsWrapper
 from swagger_client.models.budget_summary import BudgetSummary
 from swagger_client.models.budget_summary_response import BudgetSummaryResponse
 from swagger_client.models.budget_summary_wrapper import BudgetSummaryWrapper
@@ -54,6 +57,8 @@ from swagger_client.models.currency_format import CurrencyFormat
 from swagger_client.models.date_format import DateFormat
 from swagger_client.models.error_detail import ErrorDetail
 from swagger_client.models.error_response import ErrorResponse
+from swagger_client.models.hybrid_transactions_response import HybridTransactionsResponse
+from swagger_client.models.hybrid_transactions_wrapper import HybridTransactionsWrapper
 from swagger_client.models.month_detail_response import MonthDetailResponse
 from swagger_client.models.month_detail_wrapper import MonthDetailWrapper
 from swagger_client.models.month_summaries_response import MonthSummariesResponse
@@ -88,6 +93,7 @@ from swagger_client.models.user_response import UserResponse
 from swagger_client.models.user_wrapper import UserWrapper
 from swagger_client.models.budget_detail import BudgetDetail
 from swagger_client.models.category_group_with_categories import CategoryGroupWithCategories
+from swagger_client.models.hybrid_transaction import HybridTransaction
 from swagger_client.models.month_detail import MonthDetail
 from swagger_client.models.scheduled_transaction_detail import ScheduledTransactionDetail
 from swagger_client.models.transaction_detail import TransactionDetail

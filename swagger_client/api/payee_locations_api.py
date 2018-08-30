@@ -43,7 +43,7 @@ class PayeeLocationsApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str budget_id: The ID of the Budget. (required)
+        :param str budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
         :param str payee_location_id: ID of payee location (required)
         :return: PayeeLocationResponse
                  If the method is called asynchronously,
@@ -66,7 +66,7 @@ class PayeeLocationsApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str budget_id: The ID of the Budget. (required)
+        :param str budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
         :param str payee_location_id: ID of payee location (required)
         :return: PayeeLocationResponse
                  If the method is called asynchronously,
@@ -146,7 +146,7 @@ class PayeeLocationsApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str budget_id: The ID of the Budget. (required)
+        :param str budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
         :return: PayeeLocationsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -168,7 +168,7 @@ class PayeeLocationsApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str budget_id: The ID of the Budget. (required)
+        :param str budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
         :return: PayeeLocationsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -241,7 +241,7 @@ class PayeeLocationsApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str budget_id: The ID of the Budget. (required)
+        :param str budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
         :param str payee_id: ID of payee (required)
         :return: PayeeLocationsResponse
                  If the method is called asynchronously,
@@ -264,7 +264,7 @@ class PayeeLocationsApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str budget_id: The ID of the Budget. (required)
+        :param str budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
         :param str payee_id: ID of payee (required)
         :return: PayeeLocationsResponse
                  If the method is called asynchronously,

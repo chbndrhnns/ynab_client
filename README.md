@@ -57,7 +57,7 @@ swagger_client.configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # swagger_client.configuration.api_key_prefix['Authorization'] = 'Bearer'
 # create an instance of the API class
 api_instance = swagger_client.AccountsApi()
-budget_id = 'budget_id_example' # str | The ID of the Budget.
+budget_id = 'budget_id_example' # str | The ID of the Budget.  \"last-used\" can also be used to specify the last used budget.
 account_id = 'account_id_example' # str | The ID of the Account.
 
 try:
@@ -78,6 +78,7 @@ Class | Method | HTTP request | Description
 *AccountsApi* | [**get_account_by_id**](docs/AccountsApi.md#get_account_by_id) | **GET** /budgets/{budget_id}/accounts/{account_id} | Single account
 *AccountsApi* | [**get_accounts**](docs/AccountsApi.md#get_accounts) | **GET** /budgets/{budget_id}/accounts | Account list
 *BudgetsApi* | [**get_budget_by_id**](docs/BudgetsApi.md#get_budget_by_id) | **GET** /budgets/{budget_id} | Single budget
+*BudgetsApi* | [**get_budget_settings_by_id**](docs/BudgetsApi.md#get_budget_settings_by_id) | **GET** /budgets/{budget_id}/settings | Budget Settings
 *BudgetsApi* | [**get_budgets**](docs/BudgetsApi.md#get_budgets) | **GET** /budgets | List budgets
 *CategoriesApi* | [**get_categories**](docs/CategoriesApi.md#get_categories) | **GET** /budgets/{budget_id}/categories | List categories
 *CategoriesApi* | [**get_category_by_id**](docs/CategoriesApi.md#get_category_by_id) | **GET** /budgets/{budget_id}/categories/{category_id} | Single category
@@ -92,10 +93,10 @@ Class | Method | HTTP request | Description
 *ScheduledTransactionsApi* | [**get_scheduled_transactions**](docs/ScheduledTransactionsApi.md#get_scheduled_transactions) | **GET** /budgets/{budget_id}/scheduled_transactions | List scheduled transactions
 *TransactionsApi* | [**bulk_create_transactions**](docs/TransactionsApi.md#bulk_create_transactions) | **POST** /budgets/{budget_id}/transactions/bulk | Bulk create transactions
 *TransactionsApi* | [**create_transaction**](docs/TransactionsApi.md#create_transaction) | **POST** /budgets/{budget_id}/transactions | Create new transaction
+*TransactionsApi* | [**get_transaction_by_id**](docs/TransactionsApi.md#get_transaction_by_id) | **GET** /budgets/{budget_id}/transactions/{transaction_id} | Single transaction
 *TransactionsApi* | [**get_transactions**](docs/TransactionsApi.md#get_transactions) | **GET** /budgets/{budget_id}/transactions | List transactions
 *TransactionsApi* | [**get_transactions_by_account**](docs/TransactionsApi.md#get_transactions_by_account) | **GET** /budgets/{budget_id}/accounts/{account_id}/transactions | List account transactions
 *TransactionsApi* | [**get_transactions_by_category**](docs/TransactionsApi.md#get_transactions_by_category) | **GET** /budgets/{budget_id}/categories/{category_id}/transactions | List category transactions
-*TransactionsApi* | [**get_transactions_by_id**](docs/TransactionsApi.md#get_transactions_by_id) | **GET** /budgets/{budget_id}/transactions/{transaction_id} | Single transaction
 *TransactionsApi* | [**get_transactions_by_payee**](docs/TransactionsApi.md#get_transactions_by_payee) | **GET** /budgets/{budget_id}/payees/{payee_id}/transactions | List payee transactions
 *TransactionsApi* | [**update_transaction**](docs/TransactionsApi.md#update_transaction) | **PUT** /budgets/{budget_id}/transactions/{transaction_id} | Updates an existing transaction
 *UserApi* | [**get_user**](docs/UserApi.md#get_user) | **GET** /user | User info
@@ -110,6 +111,9 @@ Class | Method | HTTP request | Description
  - [AccountsWrapper](docs/AccountsWrapper.md)
  - [BudgetDetailResponse](docs/BudgetDetailResponse.md)
  - [BudgetDetailWrapper](docs/BudgetDetailWrapper.md)
+ - [BudgetSettings](docs/BudgetSettings.md)
+ - [BudgetSettingsResponse](docs/BudgetSettingsResponse.md)
+ - [BudgetSettingsWrapper](docs/BudgetSettingsWrapper.md)
  - [BudgetSummary](docs/BudgetSummary.md)
  - [BudgetSummaryResponse](docs/BudgetSummaryResponse.md)
  - [BudgetSummaryWrapper](docs/BudgetSummaryWrapper.md)
@@ -127,6 +131,8 @@ Class | Method | HTTP request | Description
  - [DateFormat](docs/DateFormat.md)
  - [ErrorDetail](docs/ErrorDetail.md)
  - [ErrorResponse](docs/ErrorResponse.md)
+ - [HybridTransactionsResponse](docs/HybridTransactionsResponse.md)
+ - [HybridTransactionsWrapper](docs/HybridTransactionsWrapper.md)
  - [MonthDetailResponse](docs/MonthDetailResponse.md)
  - [MonthDetailWrapper](docs/MonthDetailWrapper.md)
  - [MonthSummariesResponse](docs/MonthSummariesResponse.md)
@@ -161,6 +167,7 @@ Class | Method | HTTP request | Description
  - [UserWrapper](docs/UserWrapper.md)
  - [BudgetDetail](docs/BudgetDetail.md)
  - [CategoryGroupWithCategories](docs/CategoryGroupWithCategories.md)
+ - [HybridTransaction](docs/HybridTransaction.md)
  - [MonthDetail](docs/MonthDetail.md)
  - [ScheduledTransactionDetail](docs/ScheduledTransactionDetail.md)
  - [TransactionDetail](docs/TransactionDetail.md)

@@ -35,9 +35,10 @@ class Category(object):
         'category_group_id': 'str',
         'name': 'str',
         'hidden': 'bool',
-        'budgeted': 'float',
-        'activity': 'float',
-        'balance': 'float'
+        'budgeted': 'int',
+        'activity': 'int',
+        'balance': 'int',
+        'deleted': 'bool'
     }
 
     attribute_map = {
@@ -47,10 +48,11 @@ class Category(object):
         'hidden': 'hidden',
         'budgeted': 'budgeted',
         'activity': 'activity',
-        'balance': 'balance'
+        'balance': 'balance',
+        'deleted': 'deleted'
     }
 
-    def __init__(self, id=None, category_group_id=None, name=None, hidden=None, budgeted=None, activity=None, balance=None):  # noqa: E501
+    def __init__(self, id=None, category_group_id=None, name=None, hidden=None, budgeted=None, activity=None, balance=None, deleted=None):  # noqa: E501
         """Category - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -60,6 +62,7 @@ class Category(object):
         self._budgeted = None
         self._activity = None
         self._balance = None
+        self._deleted = None
         self.discriminator = None
 
         self.id = id
@@ -69,6 +72,7 @@ class Category(object):
         self.budgeted = budgeted
         self.activity = activity
         self.balance = balance
+        self.deleted = deleted
 
     @property
     def id(self):
@@ -171,7 +175,7 @@ class Category(object):
         Budgeted amount in current month in milliunits format  # noqa: E501
 
         :return: The budgeted of this Category.  # noqa: E501
-        :rtype: float
+        :rtype: int
         """
         return self._budgeted
 
@@ -182,7 +186,7 @@ class Category(object):
         Budgeted amount in current month in milliunits format  # noqa: E501
 
         :param budgeted: The budgeted of this Category.  # noqa: E501
-        :type: float
+        :type: int
         """
         if budgeted is None:
             raise ValueError("Invalid value for `budgeted`, must not be `None`")  # noqa: E501
@@ -196,7 +200,7 @@ class Category(object):
         Activity amount in current month in milliunits format  # noqa: E501
 
         :return: The activity of this Category.  # noqa: E501
-        :rtype: float
+        :rtype: int
         """
         return self._activity
 
@@ -207,7 +211,7 @@ class Category(object):
         Activity amount in current month in milliunits format  # noqa: E501
 
         :param activity: The activity of this Category.  # noqa: E501
-        :type: float
+        :type: int
         """
         if activity is None:
             raise ValueError("Invalid value for `activity`, must not be `None`")  # noqa: E501
@@ -221,7 +225,7 @@ class Category(object):
         Balance in current month in milliunits format  # noqa: E501
 
         :return: The balance of this Category.  # noqa: E501
-        :rtype: float
+        :rtype: int
         """
         return self._balance
 
@@ -232,12 +236,37 @@ class Category(object):
         Balance in current month in milliunits format  # noqa: E501
 
         :param balance: The balance of this Category.  # noqa: E501
-        :type: float
+        :type: int
         """
         if balance is None:
             raise ValueError("Invalid value for `balance`, must not be `None`")  # noqa: E501
 
         self._balance = balance
+
+    @property
+    def deleted(self):
+        """Gets the deleted of this Category.  # noqa: E501
+
+        Whether or not the category has been deleted.  Deleted categories will only be included in delta requests.  # noqa: E501
+
+        :return: The deleted of this Category.  # noqa: E501
+        :rtype: bool
+        """
+        return self._deleted
+
+    @deleted.setter
+    def deleted(self, deleted):
+        """Sets the deleted of this Category.
+
+        Whether or not the category has been deleted.  Deleted categories will only be included in delta requests.  # noqa: E501
+
+        :param deleted: The deleted of this Category.  # noqa: E501
+        :type: bool
+        """
+        if deleted is None:
+            raise ValueError("Invalid value for `deleted`, must not be `None`")  # noqa: E501
+
+        self._deleted = deleted
 
     def to_dict(self):
         """Returns the model properties as a dict"""

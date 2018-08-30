@@ -37,6 +37,7 @@ class CategoryGroupWithCategories(object):
         'id': 'str',
         'name': 'str',
         'hidden': 'bool',
+        'deleted': 'bool',
         'categories': 'list[Category]'
     }
 
@@ -44,21 +45,24 @@ class CategoryGroupWithCategories(object):
         'id': 'id',
         'name': 'name',
         'hidden': 'hidden',
+        'deleted': 'deleted',
         'categories': 'categories'
     }
 
-    def __init__(self, id=None, name=None, hidden=None, categories=None):  # noqa: E501
+    def __init__(self, id=None, name=None, hidden=None, deleted=None, categories=None):  # noqa: E501
         """CategoryGroupWithCategories - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
         self._name = None
         self._hidden = None
+        self._deleted = None
         self._categories = None
         self.discriminator = None
 
         self.id = id
         self.name = name
         self.hidden = hidden
+        self.deleted = deleted
         self.categories = categories
 
     @property
@@ -131,6 +135,31 @@ class CategoryGroupWithCategories(object):
             raise ValueError("Invalid value for `hidden`, must not be `None`")  # noqa: E501
 
         self._hidden = hidden
+
+    @property
+    def deleted(self):
+        """Gets the deleted of this CategoryGroupWithCategories.  # noqa: E501
+
+        Whether or not the category group has been deleted.  Deleted category groups will only be included in delta requests.  # noqa: E501
+
+        :return: The deleted of this CategoryGroupWithCategories.  # noqa: E501
+        :rtype: bool
+        """
+        return self._deleted
+
+    @deleted.setter
+    def deleted(self, deleted):
+        """Sets the deleted of this CategoryGroupWithCategories.
+
+        Whether or not the category group has been deleted.  Deleted category groups will only be included in delta requests.  # noqa: E501
+
+        :param deleted: The deleted of this CategoryGroupWithCategories.  # noqa: E501
+        :type: bool
+        """
+        if deleted is None:
+            raise ValueError("Invalid value for `deleted`, must not be `None`")  # noqa: E501
+
+        self._deleted = deleted
 
     @property
     def categories(self):
