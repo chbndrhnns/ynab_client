@@ -38,11 +38,11 @@ class PayeeLocationsApi(object):
 
         Returns a single payee location  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_payee_location_by_id(budget_id, payee_location_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_payee_location_by_id(budget_id, payee_location_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
         :param str payee_location_id: ID of payee location (required)
         :return: PayeeLocationResponse
@@ -50,7 +50,7 @@ class PayeeLocationsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.get_payee_location_by_id_with_http_info(budget_id, payee_location_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_payee_location_by_id_with_http_info(budget_id, payee_location_id, **kwargs)  # noqa: E501
@@ -61,11 +61,11 @@ class PayeeLocationsApi(object):
 
         Returns a single payee location  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_payee_location_by_id_with_http_info(budget_id, payee_location_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_payee_location_by_id_with_http_info(budget_id, payee_location_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
         :param str payee_location_id: ID of payee location (required)
         :return: PayeeLocationResponse
@@ -74,7 +74,7 @@ class PayeeLocationsApi(object):
         """
 
         all_params = ['budget_id', 'payee_location_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -130,7 +130,7 @@ class PayeeLocationsApi(object):
             files=local_var_files,
             response_type='PayeeLocationResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -141,18 +141,18 @@ class PayeeLocationsApi(object):
 
         Returns all payee locations  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_payee_locations(budget_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_payee_locations(budget_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
         :return: PayeeLocationsResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.get_payee_locations_with_http_info(budget_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_payee_locations_with_http_info(budget_id, **kwargs)  # noqa: E501
@@ -163,11 +163,11 @@ class PayeeLocationsApi(object):
 
         Returns all payee locations  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_payee_locations_with_http_info(budget_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_payee_locations_with_http_info(budget_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
         :return: PayeeLocationsResponse
                  If the method is called asynchronously,
@@ -175,7 +175,7 @@ class PayeeLocationsApi(object):
         """
 
         all_params = ['budget_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -225,7 +225,7 @@ class PayeeLocationsApi(object):
             files=local_var_files,
             response_type='PayeeLocationsResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -236,11 +236,11 @@ class PayeeLocationsApi(object):
 
         Returns all payee locations for the specified payee  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_payee_locations_by_payee(budget_id, payee_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_payee_locations_by_payee(budget_id, payee_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
         :param str payee_id: ID of payee (required)
         :return: PayeeLocationsResponse
@@ -248,7 +248,7 @@ class PayeeLocationsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.get_payee_locations_by_payee_with_http_info(budget_id, payee_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_payee_locations_by_payee_with_http_info(budget_id, payee_id, **kwargs)  # noqa: E501
@@ -259,11 +259,11 @@ class PayeeLocationsApi(object):
 
         Returns all payee locations for the specified payee  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_payee_locations_by_payee_with_http_info(budget_id, payee_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_payee_locations_by_payee_with_http_info(budget_id, payee_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
         :param str payee_id: ID of payee (required)
         :return: PayeeLocationsResponse
@@ -272,7 +272,7 @@ class PayeeLocationsApi(object):
         """
 
         all_params = ['budget_id', 'payee_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -328,7 +328,7 @@ class PayeeLocationsApi(object):
             files=local_var_files,
             response_type='PayeeLocationsResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
