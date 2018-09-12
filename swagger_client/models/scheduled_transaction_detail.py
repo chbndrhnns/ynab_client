@@ -39,9 +39,16 @@ class ScheduledTransactionDetail(object):
         'date_next': 'date',
         'frequency': 'str',
         'amount': 'int',
+        'memo': 'str',
+        'flag_color': 'str',
         'account_id': 'str',
+        'payee_id': 'str',
+        'category_id': 'str',
+        'transfer_account_id': 'str',
         'deleted': 'bool',
         'account_name': 'str',
+        'payee_name': 'str',
+        'category_name': 'str',
         'subtransactions': 'list[ScheduledSubTransaction]'
     }
 
@@ -51,13 +58,20 @@ class ScheduledTransactionDetail(object):
         'date_next': 'date_next',
         'frequency': 'frequency',
         'amount': 'amount',
+        'memo': 'memo',
+        'flag_color': 'flag_color',
         'account_id': 'account_id',
+        'payee_id': 'payee_id',
+        'category_id': 'category_id',
+        'transfer_account_id': 'transfer_account_id',
         'deleted': 'deleted',
         'account_name': 'account_name',
+        'payee_name': 'payee_name',
+        'category_name': 'category_name',
         'subtransactions': 'subtransactions'
     }
 
-    def __init__(self, id=None, date_first=None, date_next=None, frequency=None, amount=None, account_id=None, deleted=None, account_name=None, subtransactions=None):  # noqa: E501
+    def __init__(self, id=None, date_first=None, date_next=None, frequency=None, amount=None, memo=None, flag_color=None, account_id=None, payee_id=None, category_id=None, transfer_account_id=None, deleted=None, account_name=None, payee_name=None, category_name=None, subtransactions=None):  # noqa: E501
         """ScheduledTransactionDetail - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -65,9 +79,16 @@ class ScheduledTransactionDetail(object):
         self._date_next = None
         self._frequency = None
         self._amount = None
+        self._memo = None
+        self._flag_color = None
         self._account_id = None
+        self._payee_id = None
+        self._category_id = None
+        self._transfer_account_id = None
         self._deleted = None
         self._account_name = None
+        self._payee_name = None
+        self._category_name = None
         self._subtransactions = None
         self.discriminator = None
 
@@ -76,9 +97,16 @@ class ScheduledTransactionDetail(object):
         self.date_next = date_next
         self.frequency = frequency
         self.amount = amount
+        self.memo = memo
+        self.flag_color = flag_color
         self.account_id = account_id
+        self.payee_id = payee_id
+        self.category_id = category_id
+        self.transfer_account_id = transfer_account_id
         self.deleted = deleted
         self.account_name = account_name
+        self.payee_name = payee_name
+        self.category_name = category_name
         self.subtransactions = subtransactions
 
     @property
@@ -209,6 +237,60 @@ class ScheduledTransactionDetail(object):
         self._amount = amount
 
     @property
+    def memo(self):
+        """Gets the memo of this ScheduledTransactionDetail.  # noqa: E501
+
+
+        :return: The memo of this ScheduledTransactionDetail.  # noqa: E501
+        :rtype: str
+        """
+        return self._memo
+
+    @memo.setter
+    def memo(self, memo):
+        """Sets the memo of this ScheduledTransactionDetail.
+
+
+        :param memo: The memo of this ScheduledTransactionDetail.  # noqa: E501
+        :type: str
+        """
+        if memo is None:
+            raise ValueError("Invalid value for `memo`, must not be `None`")  # noqa: E501
+
+        self._memo = memo
+
+    @property
+    def flag_color(self):
+        """Gets the flag_color of this ScheduledTransactionDetail.  # noqa: E501
+
+        The scheduled transaction flag  # noqa: E501
+
+        :return: The flag_color of this ScheduledTransactionDetail.  # noqa: E501
+        :rtype: str
+        """
+        return self._flag_color
+
+    @flag_color.setter
+    def flag_color(self, flag_color):
+        """Sets the flag_color of this ScheduledTransactionDetail.
+
+        The scheduled transaction flag  # noqa: E501
+
+        :param flag_color: The flag_color of this ScheduledTransactionDetail.  # noqa: E501
+        :type: str
+        """
+        if flag_color is None:
+            raise ValueError("Invalid value for `flag_color`, must not be `None`")  # noqa: E501
+        allowed_values = ["red", "orange", "yellow", "green", "blue", "purple"]  # noqa: E501
+        if flag_color not in allowed_values:
+            raise ValueError(
+                "Invalid value for `flag_color` ({0}), must be one of {1}"  # noqa: E501
+                .format(flag_color, allowed_values)
+            )
+
+        self._flag_color = flag_color
+
+    @property
     def account_id(self):
         """Gets the account_id of this ScheduledTransactionDetail.  # noqa: E501
 
@@ -230,6 +312,77 @@ class ScheduledTransactionDetail(object):
             raise ValueError("Invalid value for `account_id`, must not be `None`")  # noqa: E501
 
         self._account_id = account_id
+
+    @property
+    def payee_id(self):
+        """Gets the payee_id of this ScheduledTransactionDetail.  # noqa: E501
+
+
+        :return: The payee_id of this ScheduledTransactionDetail.  # noqa: E501
+        :rtype: str
+        """
+        return self._payee_id
+
+    @payee_id.setter
+    def payee_id(self, payee_id):
+        """Sets the payee_id of this ScheduledTransactionDetail.
+
+
+        :param payee_id: The payee_id of this ScheduledTransactionDetail.  # noqa: E501
+        :type: str
+        """
+        if payee_id is None:
+            raise ValueError("Invalid value for `payee_id`, must not be `None`")  # noqa: E501
+
+        self._payee_id = payee_id
+
+    @property
+    def category_id(self):
+        """Gets the category_id of this ScheduledTransactionDetail.  # noqa: E501
+
+
+        :return: The category_id of this ScheduledTransactionDetail.  # noqa: E501
+        :rtype: str
+        """
+        return self._category_id
+
+    @category_id.setter
+    def category_id(self, category_id):
+        """Sets the category_id of this ScheduledTransactionDetail.
+
+
+        :param category_id: The category_id of this ScheduledTransactionDetail.  # noqa: E501
+        :type: str
+        """
+        if category_id is None:
+            raise ValueError("Invalid value for `category_id`, must not be `None`")  # noqa: E501
+
+        self._category_id = category_id
+
+    @property
+    def transfer_account_id(self):
+        """Gets the transfer_account_id of this ScheduledTransactionDetail.  # noqa: E501
+
+        If a transfer, the account_id which the scheduled transaction transfers to  # noqa: E501
+
+        :return: The transfer_account_id of this ScheduledTransactionDetail.  # noqa: E501
+        :rtype: str
+        """
+        return self._transfer_account_id
+
+    @transfer_account_id.setter
+    def transfer_account_id(self, transfer_account_id):
+        """Sets the transfer_account_id of this ScheduledTransactionDetail.
+
+        If a transfer, the account_id which the scheduled transaction transfers to  # noqa: E501
+
+        :param transfer_account_id: The transfer_account_id of this ScheduledTransactionDetail.  # noqa: E501
+        :type: str
+        """
+        if transfer_account_id is None:
+            raise ValueError("Invalid value for `transfer_account_id`, must not be `None`")  # noqa: E501
+
+        self._transfer_account_id = transfer_account_id
 
     @property
     def deleted(self):
@@ -280,6 +433,52 @@ class ScheduledTransactionDetail(object):
         self._account_name = account_name
 
     @property
+    def payee_name(self):
+        """Gets the payee_name of this ScheduledTransactionDetail.  # noqa: E501
+
+
+        :return: The payee_name of this ScheduledTransactionDetail.  # noqa: E501
+        :rtype: str
+        """
+        return self._payee_name
+
+    @payee_name.setter
+    def payee_name(self, payee_name):
+        """Sets the payee_name of this ScheduledTransactionDetail.
+
+
+        :param payee_name: The payee_name of this ScheduledTransactionDetail.  # noqa: E501
+        :type: str
+        """
+        if payee_name is None:
+            raise ValueError("Invalid value for `payee_name`, must not be `None`")  # noqa: E501
+
+        self._payee_name = payee_name
+
+    @property
+    def category_name(self):
+        """Gets the category_name of this ScheduledTransactionDetail.  # noqa: E501
+
+
+        :return: The category_name of this ScheduledTransactionDetail.  # noqa: E501
+        :rtype: str
+        """
+        return self._category_name
+
+    @category_name.setter
+    def category_name(self, category_name):
+        """Sets the category_name of this ScheduledTransactionDetail.
+
+
+        :param category_name: The category_name of this ScheduledTransactionDetail.  # noqa: E501
+        :type: str
+        """
+        if category_name is None:
+            raise ValueError("Invalid value for `category_name`, must not be `None`")  # noqa: E501
+
+        self._category_name = category_name
+
+    @property
     def subtransactions(self):
         """Gets the subtransactions of this ScheduledTransactionDetail.  # noqa: E501
 
@@ -325,6 +524,9 @@ class ScheduledTransactionDetail(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(ScheduledTransactionDetail, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

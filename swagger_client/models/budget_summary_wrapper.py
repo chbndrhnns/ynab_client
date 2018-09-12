@@ -92,6 +92,9 @@ class BudgetSummaryWrapper(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(BudgetSummaryWrapper, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

@@ -92,6 +92,9 @@ class MonthDetailResponse(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(MonthDetailResponse, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 
