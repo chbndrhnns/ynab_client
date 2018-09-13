@@ -32,8 +32,8 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = swagger_client.PayeeLocationsApi(swagger_client.ApiClient(configuration))
-budget_id = 'budget_id_example' # str | The ID of the Budget.  \"last-used\" can also be used to specify the last used budget.
-payee_location_id = 'payee_location_id_example' # str | ID of payee location
+budget_id = swagger_client.ERRORUNKNOWN() # ERRORUNKNOWN | The ID of the Budget.  \"last-used\" can also be used to specify the last used budget.
+payee_location_id = swagger_client.ERRORUNKNOWN() # ERRORUNKNOWN | ID of payee location
 
 try:
     # Single payee location
@@ -47,8 +47,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget_id** | [**str**](.md)| The ID of the Budget.  \&quot;last-used\&quot; can also be used to specify the last used budget. | 
- **payee_location_id** | [**str**](.md)| ID of payee location | 
+ **budget_id** | [**ERRORUNKNOWN**](.md)| The ID of the Budget.  \&quot;last-used\&quot; can also be used to specify the last used budget. | 
+ **payee_location_id** | [**ERRORUNKNOWN**](.md)| ID of payee location | 
 
 ### Return type
 
@@ -88,7 +88,7 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = swagger_client.PayeeLocationsApi(swagger_client.ApiClient(configuration))
-budget_id = 'budget_id_example' # str | The ID of the Budget.  \"last-used\" can also be used to specify the last used budget.
+budget_id = swagger_client.ERRORUNKNOWN() # ERRORUNKNOWN | The ID of the Budget.  \"last-used\" can also be used to specify the last used budget.
 
 try:
     # List payee locations
@@ -102,7 +102,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget_id** | [**str**](.md)| The ID of the Budget.  \&quot;last-used\&quot; can also be used to specify the last used budget. | 
+ **budget_id** | [**ERRORUNKNOWN**](.md)| The ID of the Budget.  \&quot;last-used\&quot; can also be used to specify the last used budget. | 
 
 ### Return type
 
@@ -142,8 +142,8 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = swagger_client.PayeeLocationsApi(swagger_client.ApiClient(configuration))
-budget_id = 'budget_id_example' # str | The ID of the Budget.  \"last-used\" can also be used to specify the last used budget.
-payee_id = 'payee_id_example' # str | ID of payee
+budget_id = swagger_client.ERRORUNKNOWN() # ERRORUNKNOWN | The ID of the Budget.  \"last-used\" can also be used to specify the last used budget.
+payee_id = swagger_client.ERRORUNKNOWN() # ERRORUNKNOWN | ID of payee
 
 try:
     # List locations for a payee
@@ -157,8 +157,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget_id** | [**str**](.md)| The ID of the Budget.  \&quot;last-used\&quot; can also be used to specify the last used budget. | 
- **payee_id** | [**str**](.md)| ID of payee | 
+ **budget_id** | [**ERRORUNKNOWN**](.md)| The ID of the Budget.  \&quot;last-used\&quot; can also be used to specify the last used budget. | 
+ **payee_id** | [**ERRORUNKNOWN**](.md)| ID of payee | 
 
 ### Return type
 

@@ -43,8 +43,8 @@ class MonthsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
-        :param date month: The Budget Month in ISO format (e.g. 2016-12-01).    \"current\" can also be used to specify the current calendar month (UTC). (required)
+        :param ERRORUNKNOWN budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
+        :param ERRORUNKNOWN month: The Budget Month in ISO format (e.g. 2016-12-01).    \"current\" can also be used to specify the current calendar month (UTC). (required)
         :return: MonthDetailResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -66,8 +66,8 @@ class MonthsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
-        :param date month: The Budget Month in ISO format (e.g. 2016-12-01).    \"current\" can also be used to specify the current calendar month (UTC). (required)
+        :param ERRORUNKNOWN budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
+        :param ERRORUNKNOWN month: The Budget Month in ISO format (e.g. 2016-12-01).    \"current\" can also be used to specify the current calendar month (UTC). (required)
         :return: MonthDetailResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -146,7 +146,7 @@ class MonthsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
+        :param ERRORUNKNOWN budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
         :return: MonthSummariesResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -168,7 +168,7 @@ class MonthsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
+        :param ERRORUNKNOWN budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
         :return: MonthSummariesResponse
                  If the method is called asynchronously,
                  returns the request thread.

@@ -43,7 +43,7 @@ class TransactionsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
+        :param ERRORUNKNOWN budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
         :param BulkTransactions transactions: The list of Transactions to create. (required)
         :return: BulkResponse
                  If the method is called asynchronously,
@@ -66,7 +66,7 @@ class TransactionsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
+        :param ERRORUNKNOWN budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
         :param BulkTransactions transactions: The list of Transactions to create. (required)
         :return: BulkResponse
                  If the method is called asynchronously,
@@ -146,7 +146,7 @@ class TransactionsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
+        :param ERRORUNKNOWN budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
         :param SaveTransactionWrapper transaction: The Transaction to create. (required)
         :return: TransactionResponse
                  If the method is called asynchronously,
@@ -169,7 +169,7 @@ class TransactionsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
+        :param ERRORUNKNOWN budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
         :param SaveTransactionWrapper transaction: The Transaction to create. (required)
         :return: TransactionResponse
                  If the method is called asynchronously,
@@ -249,8 +249,8 @@ class TransactionsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
-        :param str transaction_id: The ID of the Transaction. (required)
+        :param ERRORUNKNOWN budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
+        :param ERRORUNKNOWN transaction_id: The ID of the Transaction. (required)
         :return: TransactionResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -272,8 +272,8 @@ class TransactionsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
-        :param str transaction_id: The ID of the Transaction. (required)
+        :param ERRORUNKNOWN budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
+        :param ERRORUNKNOWN transaction_id: The ID of the Transaction. (required)
         :return: TransactionResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -352,9 +352,9 @@ class TransactionsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
-        :param date since_date: Only return transactions on or after this date.
-        :param str type: Only return transactions of a certain type ('uncategorized' and 'unapproved' are currently supported)
+        :param ERRORUNKNOWN budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
+        :param ERRORUNKNOWN since_date: Only return transactions on or after this date.
+        :param ERRORUNKNOWN type: Only return transactions of a certain type ('uncategorized' and 'unapproved' are currently supported)
         :return: TransactionsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -376,9 +376,9 @@ class TransactionsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
-        :param date since_date: Only return transactions on or after this date.
-        :param str type: Only return transactions of a certain type ('uncategorized' and 'unapproved' are currently supported)
+        :param ERRORUNKNOWN budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
+        :param ERRORUNKNOWN since_date: Only return transactions on or after this date.
+        :param ERRORUNKNOWN type: Only return transactions of a certain type ('uncategorized' and 'unapproved' are currently supported)
         :return: TransactionsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -455,10 +455,10 @@ class TransactionsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
-        :param str account_id: The ID of the Account. (required)
-        :param date since_date: Only return transactions on or after this date.
-        :param str type: Only return transactions of a certain type (i.e. 'uncategorized', 'unapproved')
+        :param ERRORUNKNOWN budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
+        :param ERRORUNKNOWN account_id: The ID of the Account. (required)
+        :param ERRORUNKNOWN since_date: Only return transactions on or after this date.
+        :param ERRORUNKNOWN type: Only return transactions of a certain type (i.e. 'uncategorized', 'unapproved')
         :return: TransactionsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -480,10 +480,10 @@ class TransactionsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
-        :param str account_id: The ID of the Account. (required)
-        :param date since_date: Only return transactions on or after this date.
-        :param str type: Only return transactions of a certain type (i.e. 'uncategorized', 'unapproved')
+        :param ERRORUNKNOWN budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
+        :param ERRORUNKNOWN account_id: The ID of the Account. (required)
+        :param ERRORUNKNOWN since_date: Only return transactions on or after this date.
+        :param ERRORUNKNOWN type: Only return transactions of a certain type (i.e. 'uncategorized', 'unapproved')
         :return: TransactionsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -566,10 +566,10 @@ class TransactionsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
-        :param str category_id: The ID of the Category. (required)
-        :param date since_date: Only return transactions on or after this date.
-        :param str type: Only return transactions of a certain type (i.e. 'uncategorized', 'unapproved')
+        :param ERRORUNKNOWN budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
+        :param ERRORUNKNOWN category_id: The ID of the Category. (required)
+        :param ERRORUNKNOWN since_date: Only return transactions on or after this date.
+        :param ERRORUNKNOWN type: Only return transactions of a certain type (i.e. 'uncategorized', 'unapproved')
         :return: HybridTransactionsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -591,10 +591,10 @@ class TransactionsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
-        :param str category_id: The ID of the Category. (required)
-        :param date since_date: Only return transactions on or after this date.
-        :param str type: Only return transactions of a certain type (i.e. 'uncategorized', 'unapproved')
+        :param ERRORUNKNOWN budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
+        :param ERRORUNKNOWN category_id: The ID of the Category. (required)
+        :param ERRORUNKNOWN since_date: Only return transactions on or after this date.
+        :param ERRORUNKNOWN type: Only return transactions of a certain type (i.e. 'uncategorized', 'unapproved')
         :return: HybridTransactionsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -677,10 +677,10 @@ class TransactionsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
-        :param str payee_id: The ID of the Payee. (required)
-        :param date since_date: Only return transactions on or after this date.
-        :param str type: Only return transactions of a certain type (i.e. 'uncategorized', 'unapproved')
+        :param ERRORUNKNOWN budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
+        :param ERRORUNKNOWN payee_id: The ID of the Payee. (required)
+        :param ERRORUNKNOWN since_date: Only return transactions on or after this date.
+        :param ERRORUNKNOWN type: Only return transactions of a certain type (i.e. 'uncategorized', 'unapproved')
         :return: HybridTransactionsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -702,10 +702,10 @@ class TransactionsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
-        :param str payee_id: The ID of the Payee. (required)
-        :param date since_date: Only return transactions on or after this date.
-        :param str type: Only return transactions of a certain type (i.e. 'uncategorized', 'unapproved')
+        :param ERRORUNKNOWN budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
+        :param ERRORUNKNOWN payee_id: The ID of the Payee. (required)
+        :param ERRORUNKNOWN since_date: Only return transactions on or after this date.
+        :param ERRORUNKNOWN type: Only return transactions of a certain type (i.e. 'uncategorized', 'unapproved')
         :return: HybridTransactionsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -788,8 +788,8 @@ class TransactionsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
-        :param str transaction_id: The ID of the Transaction. (required)
+        :param ERRORUNKNOWN budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
+        :param ERRORUNKNOWN transaction_id: The ID of the Transaction. (required)
         :param SaveTransactionWrapper transaction: The Transaction to update. (required)
         :return: TransactionResponse
                  If the method is called asynchronously,
@@ -812,8 +812,8 @@ class TransactionsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
-        :param str transaction_id: The ID of the Transaction. (required)
+        :param ERRORUNKNOWN budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
+        :param ERRORUNKNOWN transaction_id: The ID of the Transaction. (required)
         :param SaveTransactionWrapper transaction: The Transaction to update. (required)
         :return: TransactionResponse
                  If the method is called asynchronously,

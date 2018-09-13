@@ -31,8 +31,8 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = swagger_client.AccountsApi(swagger_client.ApiClient(configuration))
-budget_id = 'budget_id_example' # str | The ID of the Budget.  \"last-used\" can also be used to specify the last used budget.
-account_id = 'account_id_example' # str | The ID of the Account.
+budget_id = swagger_client.ERRORUNKNOWN() # ERRORUNKNOWN | The ID of the Budget.  \"last-used\" can also be used to specify the last used budget.
+account_id = swagger_client.ERRORUNKNOWN() # ERRORUNKNOWN | The ID of the Account.
 
 try:
     # Single account
@@ -46,8 +46,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget_id** | [**str**](.md)| The ID of the Budget.  \&quot;last-used\&quot; can also be used to specify the last used budget. | 
- **account_id** | [**str**](.md)| The ID of the Account. | 
+ **budget_id** | [**ERRORUNKNOWN**](.md)| The ID of the Budget.  \&quot;last-used\&quot; can also be used to specify the last used budget. | 
+ **account_id** | [**ERRORUNKNOWN**](.md)| The ID of the Account. | 
 
 ### Return type
 
@@ -87,7 +87,7 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = swagger_client.AccountsApi(swagger_client.ApiClient(configuration))
-budget_id = 'budget_id_example' # str | The ID of the Budget.  \"last-used\" can also be used to specify the last used budget.
+budget_id = swagger_client.ERRORUNKNOWN() # ERRORUNKNOWN | The ID of the Budget.  \"last-used\" can also be used to specify the last used budget.
 
 try:
     # Account list
@@ -101,7 +101,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget_id** | [**str**](.md)| The ID of the Budget.  \&quot;last-used\&quot; can also be used to specify the last used budget. | 
+ **budget_id** | [**ERRORUNKNOWN**](.md)| The ID of the Budget.  \&quot;last-used\&quot; can also be used to specify the last used budget. | 
 
 ### Return type
 

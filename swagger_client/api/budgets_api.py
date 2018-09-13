@@ -43,8 +43,8 @@ class BudgetsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
-        :param int last_knowledge_of_server: The starting server knowledge.  If provided, only entities that have changed since last_knowledge_of_server will be included.
+        :param ERRORUNKNOWN budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
+        :param ERRORUNKNOWN last_knowledge_of_server: The starting server knowledge.  If provided, only entities that have changed since last_knowledge_of_server will be included.
         :return: BudgetDetailResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -66,8 +66,8 @@ class BudgetsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
-        :param int last_knowledge_of_server: The starting server knowledge.  If provided, only entities that have changed since last_knowledge_of_server will be included.
+        :param ERRORUNKNOWN budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
+        :param ERRORUNKNOWN last_knowledge_of_server: The starting server knowledge.  If provided, only entities that have changed since last_knowledge_of_server will be included.
         :return: BudgetDetailResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -142,7 +142,7 @@ class BudgetsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
+        :param ERRORUNKNOWN budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
         :return: BudgetSettingsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -164,7 +164,7 @@ class BudgetsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
+        :param ERRORUNKNOWN budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
         :return: BudgetSettingsResponse
                  If the method is called asynchronously,
                  returns the request thread.

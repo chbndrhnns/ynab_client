@@ -92,9 +92,6 @@ class SaveTransactionWrapper(object):
                 ))
             else:
                 result[attr] = value
-        if issubclass(SaveTransactionWrapper, dict):
-            for key, value in self.items():
-                result[key] = value
 
         return result
 

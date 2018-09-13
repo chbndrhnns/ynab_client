@@ -33,24 +33,20 @@ class BudgetDetailWrapper(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'budget': 'BudgetDetail',
-        'server_knowledge': 'int'
+        'budget': 'BudgetDetail'
     }
 
     attribute_map = {
-        'budget': 'budget',
-        'server_knowledge': 'server_knowledge'
+        'budget': 'budget'
     }
 
-    def __init__(self, budget=None, server_knowledge=None):  # noqa: E501
+    def __init__(self, budget=None):  # noqa: E501
         """BudgetDetailWrapper - a model defined in Swagger"""  # noqa: E501
 
         self._budget = None
-        self._server_knowledge = None
         self.discriminator = None
 
         self.budget = budget
-        self.server_knowledge = server_knowledge
 
     @property
     def budget(self):
@@ -75,31 +71,6 @@ class BudgetDetailWrapper(object):
 
         self._budget = budget
 
-    @property
-    def server_knowledge(self):
-        """Gets the server_knowledge of this BudgetDetailWrapper.  # noqa: E501
-
-        The knowledge of the server  # noqa: E501
-
-        :return: The server_knowledge of this BudgetDetailWrapper.  # noqa: E501
-        :rtype: int
-        """
-        return self._server_knowledge
-
-    @server_knowledge.setter
-    def server_knowledge(self, server_knowledge):
-        """Sets the server_knowledge of this BudgetDetailWrapper.
-
-        The knowledge of the server  # noqa: E501
-
-        :param server_knowledge: The server_knowledge of this BudgetDetailWrapper.  # noqa: E501
-        :type: int
-        """
-        if server_knowledge is None:
-            raise ValueError("Invalid value for `server_knowledge`, must not be `None`")  # noqa: E501
-
-        self._server_knowledge = server_knowledge
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}
@@ -121,9 +92,6 @@ class BudgetDetailWrapper(object):
                 ))
             else:
                 result[attr] = value
-        if issubclass(BudgetDetailWrapper, dict):
-            for key, value in self.items():
-                result[key] = value
 
         return result
 

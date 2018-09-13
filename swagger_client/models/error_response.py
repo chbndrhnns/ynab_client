@@ -92,9 +92,6 @@ class ErrorResponse(object):
                 ))
             else:
                 result[attr] = value
-        if issubclass(ErrorResponse, dict):
-            for key, value in self.items():
-                result[key] = value
 
         return result
 

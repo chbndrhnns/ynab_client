@@ -31,7 +31,7 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = swagger_client.CategoriesApi(swagger_client.ApiClient(configuration))
-budget_id = 'budget_id_example' # str | The ID of the Budget.  \"last-used\" can also be used to specify the last used budget.
+budget_id = swagger_client.ERRORUNKNOWN() # ERRORUNKNOWN | The ID of the Budget.  \"last-used\" can also be used to specify the last used budget.
 
 try:
     # List categories
@@ -45,7 +45,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget_id** | [**str**](.md)| The ID of the Budget.  \&quot;last-used\&quot; can also be used to specify the last used budget. | 
+ **budget_id** | [**ERRORUNKNOWN**](.md)| The ID of the Budget.  \&quot;last-used\&quot; can also be used to specify the last used budget. | 
 
 ### Return type
 
@@ -85,8 +85,8 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = swagger_client.CategoriesApi(swagger_client.ApiClient(configuration))
-budget_id = 'budget_id_example' # str | The ID of the Budget.  \"last-used\" can also be used to specify the last used budget.
-category_id = 'category_id_example' # str | The ID of the Category.
+budget_id = swagger_client.ERRORUNKNOWN() # ERRORUNKNOWN | The ID of the Budget.  \"last-used\" can also be used to specify the last used budget.
+category_id = swagger_client.ERRORUNKNOWN() # ERRORUNKNOWN | The ID of the Category.
 
 try:
     # Single category
@@ -100,8 +100,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget_id** | [**str**](.md)| The ID of the Budget.  \&quot;last-used\&quot; can also be used to specify the last used budget. | 
- **category_id** | [**str**](.md)| The ID of the Category. | 
+ **budget_id** | [**ERRORUNKNOWN**](.md)| The ID of the Budget.  \&quot;last-used\&quot; can also be used to specify the last used budget. | 
+ **category_id** | [**ERRORUNKNOWN**](.md)| The ID of the Category. | 
 
 ### Return type
 
