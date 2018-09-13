@@ -36,6 +36,13 @@ class TestBudgetsApi(unittest.TestCase):
         """
         pass
 
+    def test_get_budget_settings_by_id(self):
+        """Test case for get_budget_settings_by_id
+
+        Budget Settings  # noqa: E501
+        """
+        pass
+
     def test_get_budgets(self):
         """Test case for get_budgets
 
