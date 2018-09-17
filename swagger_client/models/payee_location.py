@@ -61,6 +61,9 @@ class PayeeLocation(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(PayeeLocation, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

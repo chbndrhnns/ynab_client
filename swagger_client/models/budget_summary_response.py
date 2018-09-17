@@ -92,6 +92,9 @@ class BudgetSummaryResponse(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(BudgetSummaryResponse, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

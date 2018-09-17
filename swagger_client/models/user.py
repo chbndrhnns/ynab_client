@@ -61,6 +61,9 @@ class User(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(User, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

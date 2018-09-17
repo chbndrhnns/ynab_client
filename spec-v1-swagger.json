@@ -120,7 +120,7 @@
             "in": "path",
             "description": "The ID of the Budget.  \"last-used\" can also be used to specify the last used budget.",
             "required": true,
-            "type": "string",
+            "type": ["string","null"],
             "format": "uuid"
           },
           {
@@ -129,7 +129,7 @@
             "description":
               "The starting server knowledge.  If provided, only entities that have changed since last_knowledge_of_server will be included.",
             "required": false,
-            "type": "integer"
+            "type": ["integer","null"]
           }
         ],
         "responses": {
@@ -168,7 +168,7 @@
             "in": "path",
             "description": "The ID of the Budget.  \"last-used\" can also be used to specify the last used budget.",
             "required": true,
-            "type": "string",
+            "type": ["string","null"],
             "format": "uuid"
           }
         ],
@@ -207,7 +207,7 @@
             "in": "path",
             "description": "The ID of the Budget.  \"last-used\" can also be used to specify the last used budget.",
             "required": true,
-            "type": "string",
+            "type": ["string","null"],
             "format": "uuid"
           }
         ],
@@ -246,7 +246,7 @@
             "in": "path",
             "description": "The ID of the Budget.  \"last-used\" can also be used to specify the last used budget.",
             "required": true,
-            "type": "string",
+            "type": ["string","null"],
             "format": "uuid"
           },
           {
@@ -254,7 +254,7 @@
             "in": "path",
             "description": "The ID of the Account.",
             "required": true,
-            "type": "string",
+            "type": ["string","null"],
             "format": "uuid"
           }
         ],
@@ -293,7 +293,7 @@
             "in": "path",
             "description": "The ID of the Budget.  \"last-used\" can also be used to specify the last used budget.",
             "required": true,
-            "type": "string",
+            "type": ["string","null"],
             "format": "uuid"
           }
         ],
@@ -332,7 +332,7 @@
             "in": "path",
             "description": "The ID of the Budget.  \"last-used\" can also be used to specify the last used budget.",
             "required": true,
-            "type": "string",
+            "type": ["string","null"],
             "format": "uuid"
           },
           {
@@ -340,7 +340,7 @@
             "in": "path",
             "description": "The ID of the Category.",
             "required": true,
-            "type": "string",
+            "type": ["string","null"],
             "format": "uuid"
           }
         ],
@@ -379,7 +379,7 @@
             "in": "path",
             "description": "The ID of the Budget.  \"last-used\" can also be used to specify the last used budget.",
             "required": true,
-            "type": "string",
+            "type": ["string","null"],
             "format": "uuid"
           }
         ],
@@ -418,7 +418,7 @@
             "in": "path",
             "description": "The ID of the Budget.  \"last-used\" can also be used to specify the last used budget.",
             "required": true,
-            "type": "string",
+            "type": ["string","null"],
             "format": "uuid"
           },
           {
@@ -426,7 +426,7 @@
             "in": "path",
             "description": "The ID of the Payee.",
             "required": true,
-            "type": "string",
+            "type": ["string","null"],
             "format": "uuid"
           }
         ],
@@ -465,7 +465,7 @@
             "in": "path",
             "description": "The ID of the Budget.  \"last-used\" can also be used to specify the last used budget.",
             "required": true,
-            "type": "string",
+            "type": ["string","null"],
             "format": "uuid"
           }
         ],
@@ -504,7 +504,7 @@
             "in": "path",
             "description": "The ID of the Budget.  \"last-used\" can also be used to specify the last used budget.",
             "required": true,
-            "type": "string",
+            "type": ["string","null"],
             "format": "uuid"
           },
           {
@@ -512,7 +512,7 @@
             "in": "path",
             "description": "ID of payee location",
             "required": true,
-            "type": "string",
+            "type": ["string","null"],
             "format": "uuid"
           }
         ],
@@ -551,7 +551,7 @@
             "in": "path",
             "description": "The ID of the Budget.  \"last-used\" can also be used to specify the last used budget.",
             "required": true,
-            "type": "string",
+            "type": ["string","null"],
             "format": "uuid"
           },
           {
@@ -559,7 +559,7 @@
             "in": "path",
             "description": "ID of payee",
             "required": true,
-            "type": "string",
+            "type": ["string","null"],
             "format": "uuid"
           }
         ],
@@ -598,7 +598,7 @@
             "in": "path",
             "description": "The ID of the Budget.  \"last-used\" can also be used to specify the last used budget.",
             "required": true,
-            "type": "string",
+            "type": ["string","null"],
             "format": "uuid"
           }
         ],
@@ -637,7 +637,7 @@
             "in": "path",
             "description": "The ID of the Budget.  \"last-used\" can also be used to specify the last used budget.",
             "required": true,
-            "type": "string",
+            "type": ["string","null"],
             "format": "uuid"
           },
           {
@@ -646,7 +646,7 @@
             "description":
               "The Budget Month in ISO format (e.g. 2016-12-01).    \"current\" can also be used to specify the current calendar month (UTC).",
             "required": true,
-            "type": "string",
+            "type": ["string","null"],
             "format": "date"
           }
         ],
@@ -685,7 +685,7 @@
             "in": "path",
             "description": "The ID of the Budget.  \"last-used\" can also be used to specify the last used budget.",
             "required": true,
-            "type": "string",
+            "type": ["string","null"],
             "format": "uuid"
           },
           {
@@ -693,7 +693,7 @@
             "in": "query",
             "description": "Only return transactions on or after this date.",
             "required": false,
-            "type": "string",
+            "type": ["string","null"],
             "format": "date"
           },
           {
@@ -702,7 +702,7 @@
             "description":
               "Only return transactions of a certain type ('uncategorized' and 'unapproved' are currently supported)",
             "required": false,
-            "type": "string",
+            "type": ["string","null"],
             "enum": ["uncategorized", "unapproved"]
           }
         ],
@@ -739,7 +739,7 @@
             "in": "path",
             "description": "The ID of the Budget.  \"last-used\" can also be used to specify the last used budget.",
             "required": true,
-            "type": "string",
+            "type": ["string","null"],
             "format": "uuid"
           },
           {
@@ -787,7 +787,7 @@
             "in": "path",
             "description": "The ID of the Budget.  \"last-used\" can also be used to specify the last used budget.",
             "required": true,
-            "type": "string",
+            "type": ["string","null"],
             "format": "uuid"
           },
           {
@@ -829,7 +829,7 @@
             "in": "path",
             "description": "The ID of the Budget.  \"last-used\" can also be used to specify the last used budget.",
             "required": true,
-            "type": "string",
+            "type": ["string","null"],
             "format": "uuid"
           },
           {
@@ -837,7 +837,7 @@
             "in": "path",
             "description": "The ID of the Account.",
             "required": true,
-            "type": "string",
+            "type": ["string","null"],
             "format": "uuid"
           },
           {
@@ -845,7 +845,7 @@
             "in": "query",
             "description": "Only return transactions on or after this date.",
             "required": false,
-            "type": "string",
+            "type": ["string","null"],
             "format": "date"
           },
           {
@@ -854,7 +854,7 @@
             "description":
               "Only return transactions of a certain type (i.e. 'uncategorized', 'unapproved')",
             "required": false,
-            "type": "string",
+            "type": ["string","null"],
             "enum": ["uncategorized", "unapproved"]
           }
         ],
@@ -893,7 +893,7 @@
             "in": "path",
             "description": "The ID of the Budget.  \"last-used\" can also be used to specify the last used budget.",
             "required": true,
-            "type": "string",
+            "type": ["string","null"],
             "format": "uuid"
           },
           {
@@ -901,7 +901,7 @@
             "in": "path",
             "description": "The ID of the Category.",
             "required": true,
-            "type": "string",
+            "type": ["string","null"],
             "format": "uuid"
           },
           {
@@ -909,7 +909,7 @@
             "in": "query",
             "description": "Only return transactions on or after this date.",
             "required": false,
-            "type": "string",
+            "type": ["string","null"],
             "format": "date"
           },
           {
@@ -918,7 +918,7 @@
             "description":
               "Only return transactions of a certain type (i.e. 'uncategorized', 'unapproved')",
             "required": false,
-            "type": "string",
+            "type": ["string","null"],
             "enum": ["uncategorized", "unapproved"]
           }
         ],
@@ -957,7 +957,7 @@
             "in": "path",
             "description": "The ID of the Budget.  \"last-used\" can also be used to specify the last used budget.",
             "required": true,
-            "type": "string",
+            "type": ["string","null"],
             "format": "uuid"
           },
           {
@@ -965,7 +965,7 @@
             "in": "path",
             "description": "The ID of the Payee.",
             "required": true,
-            "type": "string",
+            "type": ["string","null"],
             "format": "uuid"
           },
           {
@@ -973,7 +973,7 @@
             "in": "query",
             "description": "Only return transactions on or after this date.",
             "required": false,
-            "type": "string",
+            "type": ["string","null"],
             "format": "date"
           },
           {
@@ -982,7 +982,7 @@
             "description":
               "Only return transactions of a certain type (i.e. 'uncategorized', 'unapproved')",
             "required": false,
-            "type": "string",
+            "type": ["string","null"],
             "enum": ["uncategorized", "unapproved"]
           }
         ],
@@ -1021,7 +1021,7 @@
             "in": "path",
             "description": "The ID of the Budget.  \"last-used\" can also be used to specify the last used budget.",
             "required": true,
-            "type": "string",
+            "type": ["string","null"],
             "format": "uuid"
           },
           {
@@ -1029,7 +1029,7 @@
             "in": "path",
             "description": "The ID of the Transaction.",
             "required": true,
-            "type": "string",
+            "type": ["string","null"],
             "format": "uuid"
           }
         ],
@@ -1066,7 +1066,7 @@
             "in": "path",
             "description": "The ID of the Budget.  \"last-used\" can also be used to specify the last used budget.",
             "required": true,
-            "type": "string",
+            "type": ["string","null"],
             "format": "uuid"
           },
           {
@@ -1074,7 +1074,7 @@
             "in": "path",
             "description": "The ID of the Transaction.",
             "required": true,
-            "type": "string",
+            "type": ["string","null"],
             "format": "uuid"
           },
           {
@@ -1116,7 +1116,7 @@
             "in": "path",
             "description": "The ID of the Budget.  \"last-used\" can also be used to specify the last used budget.",
             "required": true,
-            "type": "string",
+            "type": ["string","null"],
             "format": "uuid"
           }
         ],
@@ -1155,7 +1155,7 @@
             "in": "path",
             "description": "The ID of the Budget.  \"last-used\" can also be used to specify the last used budget.",
             "required": true,
-            "type": "string",
+            "type": ["string","null"],
             "format": "uuid"
           },
           {
@@ -1163,7 +1163,7 @@
             "in": "path",
             "description": "The ID of the Scheduled Transaction.",
             "required": true,
-            "type": "string",
+            "type": ["string","null"],
             "format": "uuid"
           }
         ],
@@ -1212,13 +1212,13 @@
       "required": ["id", "name", "detail"],
       "properties": {
         "id": {
-          "type": "string"
+          "type": ["string","null"]
         },
         "name": {
-          "type": "string"
+          "type": ["string","null"]
         },
         "detail": {
-          "type": "string"
+          "type": ["string","null"]
         }
       }
     },
@@ -1245,7 +1245,7 @@
       "required": ["id"],
       "properties": {
         "id": {
-          "type": "string",
+          "type": ["string","null"],
           "format": "uuid"
         }
       }
@@ -1255,7 +1255,7 @@
       "required": ["format"],
       "properties": {
         "format": {
-          "type": "string"
+          "type": ["string","null"]
         }
       }
     },
@@ -1273,28 +1273,28 @@
       ],
       "properties": {
         "iso_code": {
-          "type": "string"
+          "type": ["string","null"]
         },
         "example_format": {
-          "type": "string"
+          "type": ["string","null"]
         },
         "decimal_digits": {
-          "type": "integer"
+          "type": ["integer","null"]
         },
         "decimal_separator": {
-          "type": "string"
+          "type": ["string","null"]
         },
         "symbol_first": {
-          "type": "boolean"
+          "type": ["boolean","null"]
         },
         "group_separator": {
-          "type": "string"
+          "type": ["string","null"]
         },
         "currency_symbol": {
-          "type": "string"
+          "type": ["string","null"]
         },
         "display_symbol": {
-          "type": "boolean"
+          "type": ["boolean","null"]
         }
       }
     },
@@ -1312,7 +1312,7 @@
       "required": ["budgets"],
       "properties": {
         "budgets": {
-          "type": "array",
+          "type": ["array","null"],
           "items": {
             "$ref": "#/definitions/BudgetSummary"
           }
@@ -1336,7 +1336,7 @@
           "$ref": "#/definitions/BudgetDetail"
         },
         "server_knowledge": {
-          "type": "integer",
+          "type": ["integer","null"],
           "description": "The knowledge of the server"
         }
       }
@@ -1364,14 +1364,14 @@
       "required": ["id", "name"],
       "properties": {
         "id": {
-          "type": "string",
+          "type": ["string","null"],
           "format": "uuid"
         },
         "name": {
-          "type": "string"
+          "type": ["string","null"]
         },
         "last_modified_on": {
-          "type": "string",
+          "type": ["string","null"],
           "format": "date-time",
           "description":
             "The last time any changes were made to the budget from either a web or mobile client."
@@ -1405,61 +1405,61 @@
           "type": "object",
           "properties": {
             "accounts": {
-              "type": "array",
+              "type": ["array","null"],
               "items": {
                 "$ref": "#/definitions/Account"
               }
             },
             "payees": {
-              "type": "array",
+              "type": ["array","null"],
               "items": {
                 "$ref": "#/definitions/Payee"
               }
             },
             "payee_locations": {
-              "type": "array",
+              "type": ["array","null"],
               "items": {
                 "$ref": "#/definitions/PayeeLocation"
               }
             },
             "category_groups": {
-              "type": "array",
+              "type": ["array","null"],
               "items": {
                 "$ref": "#/definitions/CategoryGroup"
               }
             },
             "categories": {
-              "type": "array",
+              "type": ["array","null"],
               "items": {
                 "$ref": "#/definitions/Category"
               }
             },
             "months": {
-              "type": "array",
+              "type": ["array","null"],
               "items": {
                 "$ref": "#/definitions/MonthDetail"
               }
             },
             "transactions": {
-              "type": "array",
+              "type": ["array","null"],
               "items": {
                 "$ref": "#/definitions/TransactionSummary"
               }
             },
             "subtransactions": {
-              "type": "array",
+              "type": ["array","null"],
               "items": {
                 "$ref": "#/definitions/SubTransaction"
               }
             },
             "scheduled_transactions": {
-              "type": "array",
+              "type": ["array","null"],
               "items": {
                 "$ref": "#/definitions/ScheduledTransactionSummary"
               }
             },
             "scheduled_subtransactions": {
-              "type": "array",
+              "type": ["array","null"],
               "items": {
                 "$ref": "#/definitions/ScheduledSubTransaction"
               }
@@ -1482,7 +1482,7 @@
       "required": ["accounts"],
       "properties": {
         "accounts": {
-          "type": "array",
+          "type": ["array","null"],
           "items": {
             "$ref": "#/definitions/Account"
           }
@@ -1523,14 +1523,14 @@
       ],
       "properties": {
         "id": {
-          "type": "string",
+          "type": ["string","null"],
           "format": "uuid"
         },
         "name": {
-          "type": "string"
+          "type": ["string","null"]
         },
         "type": {
-          "type": "string",
+          "type": ["string","null"],
           "description": "The type of account. Note: payPal, merchantAccount, investmentAccount, and mortgage types have been deprecated and will be removed in the future.",
           "enum": [
             "checking",
@@ -1547,36 +1547,36 @@
           ]
         },
         "on_budget": {
-          "type": "boolean",
+          "type": ["boolean","null"],
           "description": "Whether this account is on budget or not"
         },
         "closed": {
-          "type": "boolean",
+          "type": ["boolean","null"],
           "description": "Whether this account is closed or not"
         },
         "note": {
-          "type": "string"
+          "type": ["string","null"]
         },
         "balance": {
-          "type": "integer",
+          "type": ["integer","null"],
           "format": "1234000",
           "description":
             "The current balance of the account in milliunits format"
         },
         "cleared_balance": {
-          "type": "integer",
+          "type": ["integer","null"],
           "format": "1234000",
           "description":
             "The current cleared balance of the account in milliunits format"
         },
         "uncleared_balance": {
-          "type": "integer",
+          "type": ["integer","null"],
           "format": "1234000",
           "description":
             "The current uncleared balance of the account in milliunits format"
         },
         "deleted": {
-          "type": "boolean",
+          "type": ["boolean","null"],
           "description": "Whether or not the account has been deleted.  Deleted accounts will only be included in delta requests."
         }
       }
@@ -1595,7 +1595,7 @@
       "required": ["category_groups"],
       "properties": {
         "category_groups": {
-          "type": "array",
+          "type": ["array","null"],
           "items": {
             "$ref": "#/definitions/CategoryGroupWithCategories"
           }
@@ -1625,18 +1625,18 @@
       "required": ["id", "name", "hidden", "deleted"],
       "properties": {
         "id": {
-          "type": "string",
+          "type": ["string","null"],
           "format": "uuid"
         },
         "name": {
-          "type": "string"
+          "type": ["string","null"]
         },
         "hidden": {
           "description": "Whether or not the category group is hidden",
-          "type": "boolean"
+          "type": ["boolean","null"]
         },
         "deleted": {
-          "type": "boolean",
+          "type": ["boolean","null"],
           "description": "Whether or not the category group has been deleted.  Deleted category groups will only be included in delta requests."
         }
       }
@@ -1651,7 +1651,7 @@
           "required": ["categories"],
           "properties": {
             "categories": {
-              "type": "array",
+              "type": ["array","null"],
               "description": "Category group categories",
               "items": {
                 "$ref": "#/definitions/Category"
@@ -1681,65 +1681,65 @@
       ],
       "properties": {
         "id": {
-          "type": "string",
+          "type": ["string","null"],
           "format": "uuid"
         },
         "category_group_id": {
-          "type": "string",
+          "type": ["string","null"],
           "format": "uuid"
         },
         "name": {
-          "type": "string"
+          "type": ["string","null"]
         },
         "hidden": {
           "description": "Whether or not the category is hidden",
-          "type": "boolean"
+          "type": ["boolean","null"]
         },
         "original_category_group_id": {
           "description": "If category is hidden this is the id of the category group it originally belonged to before it was hidden.",
-          "type": "string",
+          "type": ["string","null"],
           "format": "uuid"
         },
         "note": {
-          "type": "string"
+          "type": ["string","null"]
         },
         "budgeted": {
-          "type": "integer",
+          "type": ["integer","null"],
           "description": "Budgeted amount in current month in milliunits format"
         },
         "activity": {
-          "type": "integer",
+          "type": ["integer","null"],
           "description": "Activity amount in current month in milliunits format"
         },
         "balance": {
-          "type": "integer",
+          "type": ["integer","null"],
           "description": "Balance in current month in milliunits format"
         },
         "goal_type": {
-          "type": "string",
+          "type": ["string","null"],
           "enum": ["TB", "TBD", "MF", null],
           "description": "The type of goal, if the cagegory has a goal (TB=Target Category Balance, TBD=Target Category Balance by Date, MF=Monthly Funding)"
         },
         "goal_creation_month": {
-          "type": "string",
+          "type": ["string","null"],
           "format": "date",
           "description": "The month a goal was created"
         },
         "goal_target": {
-          "type": "integer",
+          "type": ["integer","null"],
           "description": "The goal target amount in milliunits"
         },
         "goal_target_month": {
-          "type": "string",
+          "type": ["string","null"],
           "format": "date",
           "description": "If the goal type is 'TBD' (Target Category Balance by Date), this is the target month for the goal to be completed"
         },
         "goal_percentage_complete": {
-          "type": "integer",
+          "type": ["integer","null"],
           "description": "The percentage completion of the goal"
         },
         "deleted": {
-          "type": "boolean",
+          "type": ["boolean","null"],
           "description": "Whether or not the category has been deleted.  Deleted categories will only be included in delta requests."
         }
       }
@@ -1758,7 +1758,7 @@
       "required": ["payees"],
       "properties": {
         "payees": {
-          "type": "array",
+          "type": ["array","null"],
           "items": {
             "$ref": "#/definitions/Payee"
           }
@@ -1788,19 +1788,19 @@
       "required": ["id", "name", "transfer_account_id", "deleted"],
       "properties": {
         "id": {
-          "type": "string",
+          "type": ["string","null"],
           "format": "uuid"
         },
         "name": {
-          "type": "string"
+          "type": ["string","null"]
         },
         "transfer_account_id": {
           "description":
             "If a transfer payee, the account_id to which this payee transfers to",
-          "type": "string"
+          "type": ["string","null"]
         },
         "deleted": {
-          "type": "boolean",
+          "type": ["boolean","null"],
           "description": "Whether or not the payee has been deleted.  Deleted payees will only be included in delta requests."
         }
       }
@@ -1819,7 +1819,7 @@
       "required": ["payee_locations"],
       "properties": {
         "payee_locations": {
-          "type": "array",
+          "type": ["array","null"],
           "items": {
             "$ref": "#/definitions/PayeeLocation"
           }
@@ -1849,21 +1849,21 @@
       "required": ["id", "payee_id", "latitude", "longitude", "deleted"],
       "properties": {
         "id": {
-          "type": "string",
+          "type": ["string","null"],
           "format": "uuid"
         },
         "payee_id": {
-          "type": "string",
+          "type": ["string","null"],
           "format": "uuid"
         },
         "latitude": {
-          "type": "string"
+          "type": ["string","null"]
         },
         "longitude": {
-          "type": "string"
+          "type": ["string","null"]
         },
         "deleted": {
-          "type": "boolean",
+          "type": ["boolean","null"],
           "description": "Whether or not the payee location has been deleted.  Deleted payee locations will only be included in delta requests."
         }
       }
@@ -1882,7 +1882,7 @@
       "required": ["transactions"],
       "properties": {
         "transactions": {
-          "type": "array",
+          "type": ["array","null"],
           "items": {
             "$ref": "#/definitions/TransactionDetail"
           }
@@ -1903,7 +1903,7 @@
       "required": ["transactions"],
       "properties": {
         "transactions": {
-          "type": "array",
+          "type": ["array","null"],
           "items": {
             "$ref": "#/definitions/HybridTransaction"
           }
@@ -1947,58 +1947,58 @@
       ],
       "properties": {
         "id": {
-          "type": "string",
+          "type": ["string","null"],
           "format": "uuid"
         },
         "date": {
-          "type": "string",
+          "type": ["string","null"],
           "format": "date"
         },
         "amount": {
-          "type": "integer",
+          "type": ["integer","null"],
           "format": "1234000",
           "description": "The transaction amount in milliunits format"
         },
         "memo": {
-          "type": "string"
+          "type": ["string","null"]
         },
         "cleared": {
-          "type": "string",
+          "type": ["string","null"],
           "enum": ["cleared", "uncleared", "reconciled"],
           "description": "The cleared status of the transaction"
         },
         "approved": {
-          "type": "boolean",
+          "type": ["boolean","null"],
           "description": "Whether or not the transaction is approved"
         },
         "flag_color": {
-          "type": "string",
+          "type": ["string","null"],
           "enum": ["red", "orange", "yellow", "green", "blue", "purple", null],
           "description": "The transaction flag"
         },
         "account_id": {
-          "type": "string",
+          "type": ["string","null"],
           "format": "uuid"
         },
         "payee_id": {
-          "type": "string",
+          "type": ["string","null"],
           "format": "uuid"
         },
         "category_id": {
-          "type": "string",
+          "type": ["string","null"],
           "format": "uuid"
         },
         "transfer_account_id": {
-          "type": "string",
+          "type": ["string","null"],
           "format": "uuid"
         },
         "import_id": {
-          "type": "string",
+          "type": ["string","null"],
           "description":
             "If the Transaction was imported, this field is a unique (by account) import identifier.  If this transaction was imported through File Based Import or Direct Import and not through the API, the import_id will have the format: 'YNAB:[milliunit_amount]:[iso_date]:[occurrence]'.  For example, a transaction dated 2015-12-30 in the amount of -$294.23 USD would have an import_id of 'YNAB:-294230:2015-12-30:1'.  If a second transaction on the same account was imported and had the same date and same amount, its import_id would be 'YNAB:-294230:2015-12-30:2'."
         },
         "deleted": {
-          "type": "boolean",
+          "type": ["boolean","null"],
           "description": "Whether or not the transaction has been deleted.  Deleted transactions will only be included in delta requests."
         }
       }
@@ -2018,16 +2018,16 @@
           ],
           "properties": {
             "account_name": {
-              "type": "string"
+              "type": ["string","null"]
             },
             "payee_name": {
-              "type": "string"
+              "type": ["string","null"]
             },
             "category_name": {
-              "type": "string"
+              "type": ["string","null"]
             },
             "subtransactions": {
-              "type": "array",
+              "type": ["array","null"],
               "description": "If a split transaction, the subtransactions.",
               "items": {
                 "$ref": "#/definitions/SubTransaction"
@@ -2053,25 +2053,25 @@
           ],
           "properties": {
             "type": {
-              "type": "string",
+              "type": ["string","null"],
               "enum": ["transaction", "subtransaction"],
               "description":
                 "Whether the hybrid transaction represents a regular transaction or a subtransaction"
             },
             "parent_transaction_id": {
-              "type": "string",
+              "type": ["string","null"],
               "format": "uuid",
               "description":
                 "For subtransaction types, this is the id of the pararent transaction.  For transaction types, this id will be always be null."
             },
             "account_name": {
-              "type": "string"
+              "type": ["string","null"]
             },
             "payee_name": {
-              "type": "string"
+              "type": ["string","null"]
             },
             "category_name": {
-              "type": "string"
+              "type": ["string","null"]
             }
           }
         }
@@ -2091,55 +2091,55 @@
       "required": ["account_id", "date", "amount"],
       "properties": {
         "account_id": {
-          "type": "string",
+          "type": ["string","null"],
           "format": "uuid"
         },
         "date": {
-          "type": "string",
+          "type": ["string","null"],
           "format": "date"
         },
         "amount": {
-          "type": "integer",
+          "type": ["integer","null"],
           "format": "1234000",
           "description": "The transaction amount in milliunits format"
         },
         "payee_id": {
-          "type": "string",
+          "type": ["string","null"],
           "format": "uuid",
           "description":
             "The payee for the transaction.  Transfer payees are not permitted and will be ignored if supplied."
         },
         "payee_name": {
-          "type": "string",
+          "type": ["string","null"],
           "description":
             "The payee name.  If a payee_name value is provided and payee_id has a null value, the payee_name value will be used to resolve the payee by either (1) a matching payee rename rule (only if import_id is also specified) or (2) a payee with the same name or (3) creation of a new payee."
         },
         "category_id": {
-          "type": "string",
+          "type": ["string","null"],
           "format": "uuid",
           "description":
             "The category for the transaction.  Split and Credit Card Payment categories are not permitted and will be ignored if supplied."
         },
         "memo": {
-          "type": "string"
+          "type": ["string","null"]
         },
         "cleared": {
-          "type": "string",
+          "type": ["string","null"],
           "enum": ["cleared", "uncleared", "reconciled"],
           "description": "The cleared status of the transaction"
         },
         "approved": {
-          "type": "boolean",
+          "type": ["boolean","null"],
           "description":
             "Whether or not the transaction is approved.  If not supplied, transaction will be unapproved by default."
         },
         "flag_color": {
-          "type": "string",
+          "type": ["string","null"],
           "enum": ["red", "orange", "yellow", "green", "blue", "purple", null],
           "description": "The transaction flag"
         },
         "import_id": {
-          "type": "string",
+          "type": ["string","null"],
           "description":
             "If specified for a new transaction, the transaction will be treated as Imported and assigned this import_id.  If another transaction on the same account with this same import_id is later attempted to be created, it will be skipped to prevent duplication.  Transactions imported through File Based Import or Direct Import and not through the API, are assigned an import_id in the format: 'YNAB:[milliunit_amount]:[iso_date]:[occurrence]'.  For example, a transaction dated 2015-12-30 in the amount of -$294.23 USD would have an import_id of 'YNAB:-294230:2015-12-30:1'.  If a second transaction on the same account was imported and had the same date and same amount, its import_id would be 'YNAB:-294230:2015-12-30:2'.  Using a consistent format will prevent duplicates through Direct Import and File Based Import.  If import_id is specified as null, the transaction will be treated as a user entered transaction."
         }
@@ -2159,18 +2159,18 @@
       "required": ["transaction_ids", "duplicate_import_ids"],
       "properties": {
         "transaction_ids": {
-          "type": "array",
+          "type": ["array","null"],
           "description": "The list of Transaction IDs that were created.",
           "items": {
-            "type": "string"
+            "type": ["string","null"]
           }
         },
         "duplicate_import_ids": {
-          "type": "array",
+          "type": ["array","null"],
           "description":
             "If any Transactions were not created because they had an import_id matching a transaction already on the same account, the specified import_id(s) will be included in this list.",
           "items": {
-            "type": "string"
+            "type": ["string","null"]
           }
         }
       }
@@ -2189,7 +2189,7 @@
       "required": ["transactions"],
       "properties": {
         "transactions": {
-          "type": "array",
+          "type": ["array","null"],
           "items": {
             "$ref": "#/definitions/SaveTransaction"
           }
@@ -2210,37 +2210,37 @@
       ],
       "properties": {
         "id": {
-          "type": "string",
+          "type": ["string","null"],
           "format": "uuid"
         },
         "transaction_id": {
-          "type": "string",
+          "type": ["string","null"],
           "format": "uuid"
         },
         "amount": {
-          "type": "integer",
+          "type": ["integer","null"],
           "format": "1234000",
           "description": "The subtransaction amount in milliunits format"
         },
         "memo": {
-          "type": "string"
+          "type": ["string","null"]
         },
         "payee_id": {
-          "type": "string",
+          "type": ["string","null"],
           "format": "uuid"
         },
         "category_id": {
-          "type": "string",
+          "type": ["string","null"],
           "format": "uuid"
         },
         "transfer_account_id": {
-          "type": "string",
+          "type": ["string","null"],
           "format": "uuid",
           "description":
             "If a transfer, the account_id which the subtransaction transfers to"
         },
         "deleted": {
-          "type": "boolean",
+          "type": ["boolean","null"],
           "description": "Whether or not the subtransaction has been deleted.  Deleted subtransactions will only be included in delta requests."
         }
       }
@@ -2259,7 +2259,7 @@
       "required": ["scheduled_transactions"],
       "properties": {
         "scheduled_transactions": {
-          "type": "array",
+          "type": ["array","null"],
           "items": {
             "$ref": "#/definitions/ScheduledTransactionDetail"
           }
@@ -2302,23 +2302,23 @@
       ],
       "properties": {
         "id": {
-          "type": "string",
+          "type": ["string","null"],
           "format": "uuid"
         },
         "date_first": {
-          "type": "string",
+          "type": ["string","null"],
           "format": "date",
           "description":
             "The first date for which the Scheduled Transaction was scheduled."
         },
         "date_next": {
-          "type": "string",
+          "type": ["string","null"],
           "format": "date",
           "description":
             "The next date for which the Scheduled Transaction is scheduled."
         },
         "frequency": {
-          "type": "string",
+          "type": ["string","null"],
           "enum": [
             "never",
             "daily",
@@ -2336,38 +2336,38 @@
           ]
         },
         "amount": {
-          "type": "integer",
+          "type": ["integer","null"],
           "format": "1234000",
           "description": "The scheduled transaction amount in milliunits format"
         },
         "memo": {
-          "type": "string"
+          "type": ["string","null"]
         },
         "flag_color": {
-          "type": "string",
+          "type": ["string","null"],
           "enum": ["red", "orange", "yellow", "green", "blue", "purple", null],
           "description": "The scheduled transaction flag"
         },
         "account_id": {
-          "type": "string",
+          "type": ["string","null"],
           "format": "uuid"
         },
         "payee_id": {
-          "type": "string",
+          "type": ["string","null"],
           "format": "uuid"
         },
         "category_id": {
-          "type": "string",
+          "type": ["string","null"],
           "format": "uuid"
         },
         "transfer_account_id": {
-          "type": "string",
+          "type": ["string","null"],
           "format": "uuid",
           "description":
             "If a transfer, the account_id which the scheduled transaction transfers to"
         },
         "deleted": {
-          "type": "boolean",
+          "type": ["boolean","null"],
           "description": "Whether or not the scheduled transaction has been deleted.  Deleted scheduled transactions will only be included in delta requests."
         }
       }
@@ -2387,16 +2387,16 @@
           ],
           "properties": {
             "account_name": {
-              "type": "string"
+              "type": ["string","null"]
             },
             "payee_name": {
-              "type": "string"
+              "type": ["string","null"]
             },
             "category_name": {
-              "type": "string"
+              "type": ["string","null"]
             },
             "subtransactions": {
-              "type": "array",
+              "type": ["array","null"],
               "description":
                 "If a split scheduled transaction, the subtransactions.",
               "items": {
@@ -2421,38 +2421,38 @@
       ],
       "properties": {
         "id": {
-          "type": "string",
+          "type": ["string","null"],
           "format": "uuid"
         },
         "scheduled_transaction_id": {
-          "type": "string",
+          "type": ["string","null"],
           "format": "uuid"
         },
         "amount": {
-          "type": "integer",
+          "type": ["integer","null"],
           "format": "1234000",
           "description":
             "The scheduled subtransaction amount in milliunits format"
         },
         "memo": {
-          "type": "string"
+          "type": ["string","null"]
         },
         "payee_id": {
-          "type": "string",
+          "type": ["string","null"],
           "format": "uuid"
         },
         "category_id": {
-          "type": "string",
+          "type": ["string","null"],
           "format": "uuid"
         },
         "transfer_account_id": {
-          "type": "string",
+          "type": ["string","null"],
           "format": "uuid",
           "description":
             "If a transfer, the account_id which the scheduled subtransaction transfers to"
         },
         "deleted": {
-          "type": "boolean",
+          "type": ["boolean","null"],
           "description": "Whether or not the scheduled subtransaction has been deleted.  Deleted scheduled subtransactions will only be included in delta requests."
         }
       }
@@ -2471,7 +2471,7 @@
       "required": ["months"],
       "properties": {
         "months": {
-          "type": "array",
+          "type": ["array","null"],
           "items": {
             "$ref": "#/definitions/MonthSummary"
           }
@@ -2501,38 +2501,38 @@
       "required": ["month", "note", "income", "budgeted", "activity", "to_be_budgeted", "age_of_money"],
       "properties": {
         "month": {
-          "type": "string",
+          "type": ["string","null"],
           "format": "date"
         },
         "note": {
-          "type": "string"
+          "type": ["string","null"]
         },
         "income": {
-          "type": "integer",
+          "type": ["integer","null"],
           "format": "1234000",
           "description":
             "The total amount in transactions categorized to 'Inflow: To be Budgeted' in the month"
         },
         "budgeted": {
-          "type": "integer",
+          "type": ["integer","null"],
           "format": "1234000",
           "description":
             "The total amount budgeted in the month"
         },
         "activity": {
-          "type": "integer",
+          "type": ["integer","null"],
           "format": "1234000",
           "description":
             "The total amount in transactions in the month, excluding those categorized to 'Inflow: To be Budgeted'"
         },
         "to_be_budgeted": {
-          "type": "integer",
+          "type": ["integer","null"],
           "format": "1234000",
           "description":
             "The available amount for 'To be Budgeted'"
         },
         "age_of_money": {
-          "type": "integer",
+          "type": ["integer","null"],
           "description": "The Age of Money as of the month"
         }
       }
@@ -2547,7 +2547,7 @@
           "required": ["categories"],
           "properties": {
             "categories": {
-              "type": "array",
+              "type": ["array","null"],
               "description": "The budget month categories",
               "items": {
                 "$ref": "#/definitions/Category"

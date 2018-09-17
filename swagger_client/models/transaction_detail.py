@@ -63,6 +63,9 @@ class TransactionDetail(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(TransactionDetail, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

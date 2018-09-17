@@ -61,6 +61,9 @@ class BulkTransactions(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(BulkTransactions, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

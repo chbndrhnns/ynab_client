@@ -61,6 +61,9 @@ class ScheduledSubTransaction(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(ScheduledSubTransaction, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

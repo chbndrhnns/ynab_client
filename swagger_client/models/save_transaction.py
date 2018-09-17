@@ -61,6 +61,9 @@ class SaveTransaction(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(SaveTransaction, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

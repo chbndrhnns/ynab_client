@@ -63,6 +63,9 @@ class CategoryGroupWithCategories(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(CategoryGroupWithCategories, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

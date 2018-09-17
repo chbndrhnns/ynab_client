@@ -92,6 +92,9 @@ class UserResponse(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(UserResponse, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 
