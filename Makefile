@@ -1,6 +1,7 @@
 OUTPUT_DIR:=$(shell pwd)
 
 fetch-swagger-file:
+	rm spec-v1-swagger.json
 	curl -o spec-v1-swagger.json https://api.youneedabudget.com/papi/spec-v1-swagger.json
 
 allow-null:
