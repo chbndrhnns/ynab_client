@@ -52,11 +52,13 @@ from swagger_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: bearer
-swagger_client.configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+configuration = swagger_client.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# swagger_client.configuration.api_key_prefix['Authorization'] = 'Bearer'
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = swagger_client.AccountsApi()
+api_instance = swagger_client.AccountsApi(swagger_client.ApiClient(configuration))
 budget_id = 'budget_id_example' # str | The ID of the Budget.  \"last-used\" can also be used to specify the last used budget.
 account_id = 'account_id_example' # str | The ID of the Account.
 

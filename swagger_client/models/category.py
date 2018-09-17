@@ -35,9 +35,16 @@ class Category(object):
         'category_group_id': 'str',
         'name': 'str',
         'hidden': 'bool',
+        'original_category_group_id': 'str',
+        'note': 'str',
         'budgeted': 'int',
         'activity': 'int',
         'balance': 'int',
+        'goal_type': 'str',
+        'goal_creation_month': 'date',
+        'goal_target': 'int',
+        'goal_target_month': 'date',
+        'goal_percentage_complete': 'int',
         'deleted': 'bool'
     }
 
@@ -46,22 +53,36 @@ class Category(object):
         'category_group_id': 'category_group_id',
         'name': 'name',
         'hidden': 'hidden',
+        'original_category_group_id': 'original_category_group_id',
+        'note': 'note',
         'budgeted': 'budgeted',
         'activity': 'activity',
         'balance': 'balance',
+        'goal_type': 'goal_type',
+        'goal_creation_month': 'goal_creation_month',
+        'goal_target': 'goal_target',
+        'goal_target_month': 'goal_target_month',
+        'goal_percentage_complete': 'goal_percentage_complete',
         'deleted': 'deleted'
     }
 
-    def __init__(self, id=None, category_group_id=None, name=None, hidden=None, budgeted=None, activity=None, balance=None, deleted=None):  # noqa: E501
+    def __init__(self, id=None, category_group_id=None, name=None, hidden=None, original_category_group_id=None, note=None, budgeted=None, activity=None, balance=None, goal_type=None, goal_creation_month=None, goal_target=None, goal_target_month=None, goal_percentage_complete=None, deleted=None):  # noqa: E501
         """Category - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
         self._category_group_id = None
         self._name = None
         self._hidden = None
+        self._original_category_group_id = None
+        self._note = None
         self._budgeted = None
         self._activity = None
         self._balance = None
+        self._goal_type = None
+        self._goal_creation_month = None
+        self._goal_target = None
+        self._goal_target_month = None
+        self._goal_percentage_complete = None
         self._deleted = None
         self.discriminator = None
 
@@ -69,9 +90,17 @@ class Category(object):
         self.category_group_id = category_group_id
         self.name = name
         self.hidden = hidden
+        if original_category_group_id is not None:
+            self.original_category_group_id = original_category_group_id
+        self.note = note
         self.budgeted = budgeted
         self.activity = activity
         self.balance = balance
+        self.goal_type = goal_type
+        self.goal_creation_month = goal_creation_month
+        self.goal_target = goal_target
+        self.goal_target_month = goal_target_month
+        self.goal_percentage_complete = goal_percentage_complete
         self.deleted = deleted
 
     @property
@@ -169,6 +198,52 @@ class Category(object):
         self._hidden = hidden
 
     @property
+    def original_category_group_id(self):
+        """Gets the original_category_group_id of this Category.  # noqa: E501
+
+        If category is hidden this is the id of the category group it originally belonged to before it was hidden.  # noqa: E501
+
+        :return: The original_category_group_id of this Category.  # noqa: E501
+        :rtype: str
+        """
+        return self._original_category_group_id
+
+    @original_category_group_id.setter
+    def original_category_group_id(self, original_category_group_id):
+        """Sets the original_category_group_id of this Category.
+
+        If category is hidden this is the id of the category group it originally belonged to before it was hidden.  # noqa: E501
+
+        :param original_category_group_id: The original_category_group_id of this Category.  # noqa: E501
+        :type: str
+        """
+
+        self._original_category_group_id = original_category_group_id
+
+    @property
+    def note(self):
+        """Gets the note of this Category.  # noqa: E501
+
+
+        :return: The note of this Category.  # noqa: E501
+        :rtype: str
+        """
+        return self._note
+
+    @note.setter
+    def note(self, note):
+        """Sets the note of this Category.
+
+
+        :param note: The note of this Category.  # noqa: E501
+        :type: str
+        """
+        if note is None:
+            raise ValueError("Invalid value for `note`, must not be `None`")  # noqa: E501
+
+        self._note = note
+
+    @property
     def budgeted(self):
         """Gets the budgeted of this Category.  # noqa: E501
 
@@ -244,6 +319,137 @@ class Category(object):
         self._balance = balance
 
     @property
+    def goal_type(self):
+        """Gets the goal_type of this Category.  # noqa: E501
+
+        The type of goal, if the cagegory has a goal (TB=Target Category Balance, TBD=Target Category Balance by Date, MF=Monthly Funding)  # noqa: E501
+
+        :return: The goal_type of this Category.  # noqa: E501
+        :rtype: str
+        """
+        return self._goal_type
+
+    @goal_type.setter
+    def goal_type(self, goal_type):
+        """Sets the goal_type of this Category.
+
+        The type of goal, if the cagegory has a goal (TB=Target Category Balance, TBD=Target Category Balance by Date, MF=Monthly Funding)  # noqa: E501
+
+        :param goal_type: The goal_type of this Category.  # noqa: E501
+        :type: str
+        """
+        if goal_type is None:
+            raise ValueError("Invalid value for `goal_type`, must not be `None`")  # noqa: E501
+        allowed_values = ["TB", "TBD", "MF"]  # noqa: E501
+        if goal_type not in allowed_values:
+            raise ValueError(
+                "Invalid value for `goal_type` ({0}), must be one of {1}"  # noqa: E501
+                .format(goal_type, allowed_values)
+            )
+
+        self._goal_type = goal_type
+
+    @property
+    def goal_creation_month(self):
+        """Gets the goal_creation_month of this Category.  # noqa: E501
+
+        The month a goal was created  # noqa: E501
+
+        :return: The goal_creation_month of this Category.  # noqa: E501
+        :rtype: date
+        """
+        return self._goal_creation_month
+
+    @goal_creation_month.setter
+    def goal_creation_month(self, goal_creation_month):
+        """Sets the goal_creation_month of this Category.
+
+        The month a goal was created  # noqa: E501
+
+        :param goal_creation_month: The goal_creation_month of this Category.  # noqa: E501
+        :type: date
+        """
+        if goal_creation_month is None:
+            raise ValueError("Invalid value for `goal_creation_month`, must not be `None`")  # noqa: E501
+
+        self._goal_creation_month = goal_creation_month
+
+    @property
+    def goal_target(self):
+        """Gets the goal_target of this Category.  # noqa: E501
+
+        The goal target amount in milliunits  # noqa: E501
+
+        :return: The goal_target of this Category.  # noqa: E501
+        :rtype: int
+        """
+        return self._goal_target
+
+    @goal_target.setter
+    def goal_target(self, goal_target):
+        """Sets the goal_target of this Category.
+
+        The goal target amount in milliunits  # noqa: E501
+
+        :param goal_target: The goal_target of this Category.  # noqa: E501
+        :type: int
+        """
+        if goal_target is None:
+            raise ValueError("Invalid value for `goal_target`, must not be `None`")  # noqa: E501
+
+        self._goal_target = goal_target
+
+    @property
+    def goal_target_month(self):
+        """Gets the goal_target_month of this Category.  # noqa: E501
+
+        If the goal type is 'TBD' (Target Category Balance by Date), this is the target month for the goal to be completed  # noqa: E501
+
+        :return: The goal_target_month of this Category.  # noqa: E501
+        :rtype: date
+        """
+        return self._goal_target_month
+
+    @goal_target_month.setter
+    def goal_target_month(self, goal_target_month):
+        """Sets the goal_target_month of this Category.
+
+        If the goal type is 'TBD' (Target Category Balance by Date), this is the target month for the goal to be completed  # noqa: E501
+
+        :param goal_target_month: The goal_target_month of this Category.  # noqa: E501
+        :type: date
+        """
+        if goal_target_month is None:
+            raise ValueError("Invalid value for `goal_target_month`, must not be `None`")  # noqa: E501
+
+        self._goal_target_month = goal_target_month
+
+    @property
+    def goal_percentage_complete(self):
+        """Gets the goal_percentage_complete of this Category.  # noqa: E501
+
+        The percentage completion of the goal  # noqa: E501
+
+        :return: The goal_percentage_complete of this Category.  # noqa: E501
+        :rtype: int
+        """
+        return self._goal_percentage_complete
+
+    @goal_percentage_complete.setter
+    def goal_percentage_complete(self, goal_percentage_complete):
+        """Sets the goal_percentage_complete of this Category.
+
+        The percentage completion of the goal  # noqa: E501
+
+        :param goal_percentage_complete: The goal_percentage_complete of this Category.  # noqa: E501
+        :type: int
+        """
+        if goal_percentage_complete is None:
+            raise ValueError("Invalid value for `goal_percentage_complete`, must not be `None`")  # noqa: E501
+
+        self._goal_percentage_complete = goal_percentage_complete
+
+    @property
     def deleted(self):
         """Gets the deleted of this Category.  # noqa: E501
 
@@ -289,6 +495,9 @@ class Category(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(Category, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

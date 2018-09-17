@@ -92,6 +92,9 @@ class ScheduledTransactionResponse(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(ScheduledTransactionResponse, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

@@ -33,25 +33,33 @@ class PayeeLocation(object):
     swagger_types = {
         'id': 'str',
         'payee_id': 'str',
+        'latitude': 'str',
+        'longitude': 'str',
         'deleted': 'bool'
     }
 
     attribute_map = {
         'id': 'id',
         'payee_id': 'payee_id',
+        'latitude': 'latitude',
+        'longitude': 'longitude',
         'deleted': 'deleted'
     }
 
-    def __init__(self, id=None, payee_id=None, deleted=None):  # noqa: E501
+    def __init__(self, id=None, payee_id=None, latitude=None, longitude=None, deleted=None):  # noqa: E501
         """PayeeLocation - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
         self._payee_id = None
+        self._latitude = None
+        self._longitude = None
         self._deleted = None
         self.discriminator = None
 
         self.id = id
         self.payee_id = payee_id
+        self.latitude = latitude
+        self.longitude = longitude
         self.deleted = deleted
 
     @property
@@ -101,6 +109,52 @@ class PayeeLocation(object):
         self._payee_id = payee_id
 
     @property
+    def latitude(self):
+        """Gets the latitude of this PayeeLocation.  # noqa: E501
+
+
+        :return: The latitude of this PayeeLocation.  # noqa: E501
+        :rtype: str
+        """
+        return self._latitude
+
+    @latitude.setter
+    def latitude(self, latitude):
+        """Sets the latitude of this PayeeLocation.
+
+
+        :param latitude: The latitude of this PayeeLocation.  # noqa: E501
+        :type: str
+        """
+        if latitude is None:
+            raise ValueError("Invalid value for `latitude`, must not be `None`")  # noqa: E501
+
+        self._latitude = latitude
+
+    @property
+    def longitude(self):
+        """Gets the longitude of this PayeeLocation.  # noqa: E501
+
+
+        :return: The longitude of this PayeeLocation.  # noqa: E501
+        :rtype: str
+        """
+        return self._longitude
+
+    @longitude.setter
+    def longitude(self, longitude):
+        """Sets the longitude of this PayeeLocation.
+
+
+        :param longitude: The longitude of this PayeeLocation.  # noqa: E501
+        :type: str
+        """
+        if longitude is None:
+            raise ValueError("Invalid value for `longitude`, must not be `None`")  # noqa: E501
+
+        self._longitude = longitude
+
+    @property
     def deleted(self):
         """Gets the deleted of this PayeeLocation.  # noqa: E501
 
@@ -146,6 +200,9 @@ class PayeeLocation(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(PayeeLocation, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

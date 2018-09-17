@@ -34,6 +34,10 @@ class SubTransaction(object):
         'id': 'str',
         'transaction_id': 'str',
         'amount': 'int',
+        'memo': 'str',
+        'payee_id': 'str',
+        'category_id': 'str',
+        'transfer_account_id': 'str',
         'deleted': 'bool'
     }
 
@@ -41,21 +45,33 @@ class SubTransaction(object):
         'id': 'id',
         'transaction_id': 'transaction_id',
         'amount': 'amount',
+        'memo': 'memo',
+        'payee_id': 'payee_id',
+        'category_id': 'category_id',
+        'transfer_account_id': 'transfer_account_id',
         'deleted': 'deleted'
     }
 
-    def __init__(self, id=None, transaction_id=None, amount=None, deleted=None):  # noqa: E501
+    def __init__(self, id=None, transaction_id=None, amount=None, memo=None, payee_id=None, category_id=None, transfer_account_id=None, deleted=None):  # noqa: E501
         """SubTransaction - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
         self._transaction_id = None
         self._amount = None
+        self._memo = None
+        self._payee_id = None
+        self._category_id = None
+        self._transfer_account_id = None
         self._deleted = None
         self.discriminator = None
 
         self.id = id
         self.transaction_id = transaction_id
         self.amount = amount
+        self.memo = memo
+        self.payee_id = payee_id
+        self.category_id = category_id
+        self.transfer_account_id = transfer_account_id
         self.deleted = deleted
 
     @property
@@ -130,6 +146,100 @@ class SubTransaction(object):
         self._amount = amount
 
     @property
+    def memo(self):
+        """Gets the memo of this SubTransaction.  # noqa: E501
+
+
+        :return: The memo of this SubTransaction.  # noqa: E501
+        :rtype: str
+        """
+        return self._memo
+
+    @memo.setter
+    def memo(self, memo):
+        """Sets the memo of this SubTransaction.
+
+
+        :param memo: The memo of this SubTransaction.  # noqa: E501
+        :type: str
+        """
+        if memo is None:
+            raise ValueError("Invalid value for `memo`, must not be `None`")  # noqa: E501
+
+        self._memo = memo
+
+    @property
+    def payee_id(self):
+        """Gets the payee_id of this SubTransaction.  # noqa: E501
+
+
+        :return: The payee_id of this SubTransaction.  # noqa: E501
+        :rtype: str
+        """
+        return self._payee_id
+
+    @payee_id.setter
+    def payee_id(self, payee_id):
+        """Sets the payee_id of this SubTransaction.
+
+
+        :param payee_id: The payee_id of this SubTransaction.  # noqa: E501
+        :type: str
+        """
+        if payee_id is None:
+            raise ValueError("Invalid value for `payee_id`, must not be `None`")  # noqa: E501
+
+        self._payee_id = payee_id
+
+    @property
+    def category_id(self):
+        """Gets the category_id of this SubTransaction.  # noqa: E501
+
+
+        :return: The category_id of this SubTransaction.  # noqa: E501
+        :rtype: str
+        """
+        return self._category_id
+
+    @category_id.setter
+    def category_id(self, category_id):
+        """Sets the category_id of this SubTransaction.
+
+
+        :param category_id: The category_id of this SubTransaction.  # noqa: E501
+        :type: str
+        """
+        if category_id is None:
+            raise ValueError("Invalid value for `category_id`, must not be `None`")  # noqa: E501
+
+        self._category_id = category_id
+
+    @property
+    def transfer_account_id(self):
+        """Gets the transfer_account_id of this SubTransaction.  # noqa: E501
+
+        If a transfer, the account_id which the subtransaction transfers to  # noqa: E501
+
+        :return: The transfer_account_id of this SubTransaction.  # noqa: E501
+        :rtype: str
+        """
+        return self._transfer_account_id
+
+    @transfer_account_id.setter
+    def transfer_account_id(self, transfer_account_id):
+        """Sets the transfer_account_id of this SubTransaction.
+
+        If a transfer, the account_id which the subtransaction transfers to  # noqa: E501
+
+        :param transfer_account_id: The transfer_account_id of this SubTransaction.  # noqa: E501
+        :type: str
+        """
+        if transfer_account_id is None:
+            raise ValueError("Invalid value for `transfer_account_id`, must not be `None`")  # noqa: E501
+
+        self._transfer_account_id = transfer_account_id
+
+    @property
     def deleted(self):
         """Gets the deleted of this SubTransaction.  # noqa: E501
 
@@ -175,6 +285,9 @@ class SubTransaction(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(SubTransaction, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

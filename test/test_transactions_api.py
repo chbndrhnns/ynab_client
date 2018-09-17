@@ -43,6 +43,13 @@ class TestTransactionsApi(unittest.TestCase):
         """
         pass
 
+    def test_get_transaction_by_id(self):
+        """Test case for get_transaction_by_id
+
+        Single transaction  # noqa: E501
+        """
+        pass
+
     def test_get_transactions(self):
         """Test case for get_transactions
 
@@ -64,10 +71,10 @@ class TestTransactionsApi(unittest.TestCase):
         """
         pass
 
-    def test_get_transactions_by_id(self):
-        """Test case for get_transactions_by_id
+    def test_get_transactions_by_payee(self):
+        """Test case for get_transactions_by_payee
 
-        Single transaction  # noqa: E501
+        List payee transactions  # noqa: E501
         """
         pass
 

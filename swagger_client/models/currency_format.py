@@ -279,6 +279,9 @@ class CurrencyFormat(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(CurrencyFormat, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 
