@@ -6,6 +6,7 @@ from __future__ import absolute_import
 from swagger_client.api.accounts_api import AccountsApi
 from swagger_client.api.budgets_api import BudgetsApi
 from swagger_client.api.categories_api import CategoriesApi
+from swagger_client.api.deprecated_api import DeprecatedApi
 from swagger_client.api.months_api import MonthsApi
 from swagger_client.api.payee_locations_api import PayeeLocationsApi
 from swagger_client.api.payees_api import PayeesApi

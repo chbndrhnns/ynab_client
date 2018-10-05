@@ -31,8 +31,8 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = swagger_client.MonthsApi(swagger_client.ApiClient(configuration))
-budget_id = swagger_client.ERRORUNKNOWN() # ERRORUNKNOWN | The ID of the Budget.  \"last-used\" can also be used to specify the last used budget.
-month = swagger_client.ERRORUNKNOWN() # ERRORUNKNOWN | The Budget Month in ISO format (e.g. 2016-12-01).    \"current\" can also be used to specify the current calendar month (UTC).
+budget_id = swagger_client.ERRORUNKNOWN() # ERRORUNKNOWN | The id of the budget (\"last-used\" can also be used to specify the last used budget)
+month = swagger_client.ERRORUNKNOWN() # ERRORUNKNOWN | The budget month in ISO format (e.g. 2016-12-30) (\"current\" can also be used to specify the current calendar month (UTC))
 
 try:
     # Single budget month
@@ -46,8 +46,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget_id** | [**ERRORUNKNOWN**](.md)| The ID of the Budget.  \&quot;last-used\&quot; can also be used to specify the last used budget. | 
- **month** | [**ERRORUNKNOWN**](.md)| The Budget Month in ISO format (e.g. 2016-12-01).    \&quot;current\&quot; can also be used to specify the current calendar month (UTC). | 
+ **budget_id** | [**ERRORUNKNOWN**](.md)| The id of the budget (\&quot;last-used\&quot; can also be used to specify the last used budget) | 
+ **month** | [**ERRORUNKNOWN**](.md)| The budget month in ISO format (e.g. 2016-12-30) (\&quot;current\&quot; can also be used to specify the current calendar month (UTC)) | 
 
 ### Return type
 
@@ -87,7 +87,7 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = swagger_client.MonthsApi(swagger_client.ApiClient(configuration))
-budget_id = swagger_client.ERRORUNKNOWN() # ERRORUNKNOWN | The ID of the Budget.  \"last-used\" can also be used to specify the last used budget.
+budget_id = swagger_client.ERRORUNKNOWN() # ERRORUNKNOWN | The id of the budget (\"last-used\" can also be used to specify the last used budget)
 
 try:
     # List budget months
@@ -101,7 +101,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget_id** | [**ERRORUNKNOWN**](.md)| The ID of the Budget.  \&quot;last-used\&quot; can also be used to specify the last used budget. | 
+ **budget_id** | [**ERRORUNKNOWN**](.md)| The id of the budget (\&quot;last-used\&quot; can also be used to specify the last used budget) | 
 
 ### Return type
 

@@ -43,7 +43,7 @@ class BudgetsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param ERRORUNKNOWN budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
+        :param ERRORUNKNOWN budget_id: The id of the budget (\"last-used\" can also be used to specify the last used budget) (required)
         :param ERRORUNKNOWN last_knowledge_of_server: The starting server knowledge.  If provided, only entities that have changed since last_knowledge_of_server will be included.
         :return: BudgetDetailResponse
                  If the method is called asynchronously,
@@ -66,7 +66,7 @@ class BudgetsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param ERRORUNKNOWN budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
+        :param ERRORUNKNOWN budget_id: The id of the budget (\"last-used\" can also be used to specify the last used budget) (required)
         :param ERRORUNKNOWN last_knowledge_of_server: The starting server knowledge.  If provided, only entities that have changed since last_knowledge_of_server will be included.
         :return: BudgetDetailResponse
                  If the method is called asynchronously,
@@ -135,14 +135,14 @@ class BudgetsApi(object):
     def get_budget_settings_by_id(self, budget_id, **kwargs):  # noqa: E501
         """Budget Settings  # noqa: E501
 
-        Returns settings for a budget.  # noqa: E501
+        Returns settings for a budget  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_budget_settings_by_id(budget_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param ERRORUNKNOWN budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
+        :param ERRORUNKNOWN budget_id: The id of the budget (\"last-used\" can also be used to specify the last used budget) (required)
         :return: BudgetSettingsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -157,14 +157,14 @@ class BudgetsApi(object):
     def get_budget_settings_by_id_with_http_info(self, budget_id, **kwargs):  # noqa: E501
         """Budget Settings  # noqa: E501
 
-        Returns settings for a budget.  # noqa: E501
+        Returns settings for a budget  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_budget_settings_by_id_with_http_info(budget_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param ERRORUNKNOWN budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
+        :param ERRORUNKNOWN budget_id: The id of the budget (\"last-used\" can also be used to specify the last used budget) (required)
         :return: BudgetSettingsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -230,7 +230,7 @@ class BudgetsApi(object):
     def get_budgets(self, **kwargs):  # noqa: E501
         """List budgets  # noqa: E501
 
-        Returns budgets list with summary information.  # noqa: E501
+        Returns budgets list with summary information  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_budgets(async_req=True)
@@ -251,7 +251,7 @@ class BudgetsApi(object):
     def get_budgets_with_http_info(self, **kwargs):  # noqa: E501
         """List budgets  # noqa: E501
 
-        Returns budgets list with summary information.  # noqa: E501
+        Returns budgets list with summary information  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_budgets_with_http_info(async_req=True)

@@ -4,8 +4,7 @@ All URIs are relative to *https://api.youneedabudget.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**bulk_create_transactions**](TransactionsApi.md#bulk_create_transactions) | **POST** /budgets/{budget_id}/transactions/bulk | Bulk create transactions
-[**create_transaction**](TransactionsApi.md#create_transaction) | **POST** /budgets/{budget_id}/transactions | Create new transaction
+[**create_transaction**](TransactionsApi.md#create_transaction) | **POST** /budgets/{budget_id}/transactions | Create a single transaction or multiple transactions
 [**get_transaction_by_id**](TransactionsApi.md#get_transaction_by_id) | **GET** /budgets/{budget_id}/transactions/{transaction_id} | Single transaction
 [**get_transactions**](TransactionsApi.md#get_transactions) | **GET** /budgets/{budget_id}/transactions | List transactions
 [**get_transactions_by_account**](TransactionsApi.md#get_transactions_by_account) | **GET** /budgets/{budget_id}/accounts/{account_id}/transactions | List account transactions
@@ -14,68 +13,12 @@ Method | HTTP request | Description
 [**update_transaction**](TransactionsApi.md#update_transaction) | **PUT** /budgets/{budget_id}/transactions/{transaction_id} | Updates an existing transaction
 
 
-# **bulk_create_transactions**
-> BulkResponse bulk_create_transactions(budget_id, transactions)
-
-Bulk create transactions
-
-Creates multiple transactions
-
-### Example
-```python
-from __future__ import print_function
-import time
-import swagger_client
-from swagger_client.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: bearer
-configuration = swagger_client.Configuration()
-configuration.api_key['Authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Authorization'] = 'Bearer'
-
-# create an instance of the API class
-api_instance = swagger_client.TransactionsApi(swagger_client.ApiClient(configuration))
-budget_id = swagger_client.ERRORUNKNOWN() # ERRORUNKNOWN | The ID of the Budget.  \"last-used\" can also be used to specify the last used budget.
-transactions = swagger_client.BulkTransactions() # BulkTransactions | The list of Transactions to create.
-
-try:
-    # Bulk create transactions
-    api_response = api_instance.bulk_create_transactions(budget_id, transactions)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TransactionsApi->bulk_create_transactions: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **budget_id** | [**ERRORUNKNOWN**](.md)| The ID of the Budget.  \&quot;last-used\&quot; can also be used to specify the last used budget. | 
- **transactions** | [**BulkTransactions**](BulkTransactions.md)| The list of Transactions to create. | 
-
-### Return type
-
-[**BulkResponse**](BulkResponse.md)
-
-### Authorization
-
-[bearer](../README.md#bearer)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **create_transaction**
-> TransactionResponse create_transaction(budget_id, transaction)
+> SaveTransactionsResponse create_transaction(budget_id, save_transactions)
 
-Create new transaction
+Create a single transaction or multiple transactions
 
-Creates a transaction
+Creates a single transaction or multiple transactions.  If you provide a body containing a 'transaction' object, a single transaction will be created and if you provide a body containing a 'transactions' array, multiple transactions will be created.
 
 ### Example
 ```python
@@ -93,12 +36,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = swagger_client.TransactionsApi(swagger_client.ApiClient(configuration))
-budget_id = swagger_client.ERRORUNKNOWN() # ERRORUNKNOWN | The ID of the Budget.  \"last-used\" can also be used to specify the last used budget.
-transaction = swagger_client.SaveTransactionWrapper() # SaveTransactionWrapper | The Transaction to create.
+budget_id = swagger_client.ERRORUNKNOWN() # ERRORUNKNOWN | The id of the budget (\"last-used\" can also be used to specify the last used budget)
+save_transactions = swagger_client.SaveTransactionsWrapper() # SaveTransactionsWrapper | The transaction or transactions to create
 
 try:
-    # Create new transaction
-    api_response = api_instance.create_transaction(budget_id, transaction)
+    # Create a single transaction or multiple transactions
+    api_response = api_instance.create_transaction(budget_id, save_transactions)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling TransactionsApi->create_transaction: %s\n" % e)
@@ -108,12 +51,12 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget_id** | [**ERRORUNKNOWN**](.md)| The ID of the Budget.  \&quot;last-used\&quot; can also be used to specify the last used budget. | 
- **transaction** | [**SaveTransactionWrapper**](SaveTransactionWrapper.md)| The Transaction to create. | 
+ **budget_id** | [**ERRORUNKNOWN**](.md)| The id of the budget (\&quot;last-used\&quot; can also be used to specify the last used budget) | 
+ **save_transactions** | [**SaveTransactionsWrapper**](SaveTransactionsWrapper.md)| The transaction or transactions to create | 
 
 ### Return type
 
-[**TransactionResponse**](TransactionResponse.md)
+[**SaveTransactionsResponse**](SaveTransactionsResponse.md)
 
 ### Authorization
 
@@ -149,8 +92,8 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = swagger_client.TransactionsApi(swagger_client.ApiClient(configuration))
-budget_id = swagger_client.ERRORUNKNOWN() # ERRORUNKNOWN | The ID of the Budget.  \"last-used\" can also be used to specify the last used budget.
-transaction_id = swagger_client.ERRORUNKNOWN() # ERRORUNKNOWN | The ID of the Transaction.
+budget_id = swagger_client.ERRORUNKNOWN() # ERRORUNKNOWN | The id of the budget (\"last-used\" can also be used to specify the last used budget)
+transaction_id = swagger_client.ERRORUNKNOWN() # ERRORUNKNOWN | The id of the transaction
 
 try:
     # Single transaction
@@ -164,8 +107,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget_id** | [**ERRORUNKNOWN**](.md)| The ID of the Budget.  \&quot;last-used\&quot; can also be used to specify the last used budget. | 
- **transaction_id** | [**ERRORUNKNOWN**](.md)| The ID of the Transaction. | 
+ **budget_id** | [**ERRORUNKNOWN**](.md)| The id of the budget (\&quot;last-used\&quot; can also be used to specify the last used budget) | 
+ **transaction_id** | [**ERRORUNKNOWN**](.md)| The id of the transaction | 
 
 ### Return type
 
@@ -205,8 +148,8 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = swagger_client.TransactionsApi(swagger_client.ApiClient(configuration))
-budget_id = swagger_client.ERRORUNKNOWN() # ERRORUNKNOWN | The ID of the Budget.  \"last-used\" can also be used to specify the last used budget.
-since_date = swagger_client.ERRORUNKNOWN() # ERRORUNKNOWN | Only return transactions on or after this date. (optional)
+budget_id = swagger_client.ERRORUNKNOWN() # ERRORUNKNOWN | The id of the budget (\"last-used\" can also be used to specify the last used budget)
+since_date = swagger_client.ERRORUNKNOWN() # ERRORUNKNOWN | Only return transactions on or after this date (optional)
 type = swagger_client.ERRORUNKNOWN() # ERRORUNKNOWN | Only return transactions of a certain type ('uncategorized' and 'unapproved' are currently supported) (optional)
 
 try:
@@ -221,8 +164,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget_id** | [**ERRORUNKNOWN**](.md)| The ID of the Budget.  \&quot;last-used\&quot; can also be used to specify the last used budget. | 
- **since_date** | [**ERRORUNKNOWN**](.md)| Only return transactions on or after this date. | [optional] 
+ **budget_id** | [**ERRORUNKNOWN**](.md)| The id of the budget (\&quot;last-used\&quot; can also be used to specify the last used budget) | 
+ **since_date** | [**ERRORUNKNOWN**](.md)| Only return transactions on or after this date | [optional] 
  **type** | [**ERRORUNKNOWN**](.md)| Only return transactions of a certain type (&#39;uncategorized&#39; and &#39;unapproved&#39; are currently supported) | [optional] 
 
 ### Return type
@@ -263,9 +206,9 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = swagger_client.TransactionsApi(swagger_client.ApiClient(configuration))
-budget_id = swagger_client.ERRORUNKNOWN() # ERRORUNKNOWN | The ID of the Budget.  \"last-used\" can also be used to specify the last used budget.
-account_id = swagger_client.ERRORUNKNOWN() # ERRORUNKNOWN | The ID of the Account.
-since_date = swagger_client.ERRORUNKNOWN() # ERRORUNKNOWN | Only return transactions on or after this date. (optional)
+budget_id = swagger_client.ERRORUNKNOWN() # ERRORUNKNOWN | The id of the budget (\"last-used\" can also be used to specify the last used budget)
+account_id = swagger_client.ERRORUNKNOWN() # ERRORUNKNOWN | The id of the account
+since_date = swagger_client.ERRORUNKNOWN() # ERRORUNKNOWN | Only return transactions on or after this date (optional)
 type = swagger_client.ERRORUNKNOWN() # ERRORUNKNOWN | Only return transactions of a certain type (i.e. 'uncategorized', 'unapproved') (optional)
 
 try:
@@ -280,9 +223,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget_id** | [**ERRORUNKNOWN**](.md)| The ID of the Budget.  \&quot;last-used\&quot; can also be used to specify the last used budget. | 
- **account_id** | [**ERRORUNKNOWN**](.md)| The ID of the Account. | 
- **since_date** | [**ERRORUNKNOWN**](.md)| Only return transactions on or after this date. | [optional] 
+ **budget_id** | [**ERRORUNKNOWN**](.md)| The id of the budget (\&quot;last-used\&quot; can also be used to specify the last used budget) | 
+ **account_id** | [**ERRORUNKNOWN**](.md)| The id of the account | 
+ **since_date** | [**ERRORUNKNOWN**](.md)| Only return transactions on or after this date | [optional] 
  **type** | [**ERRORUNKNOWN**](.md)| Only return transactions of a certain type (i.e. &#39;uncategorized&#39;, &#39;unapproved&#39;) | [optional] 
 
 ### Return type
@@ -323,9 +266,9 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = swagger_client.TransactionsApi(swagger_client.ApiClient(configuration))
-budget_id = swagger_client.ERRORUNKNOWN() # ERRORUNKNOWN | The ID of the Budget.  \"last-used\" can also be used to specify the last used budget.
-category_id = swagger_client.ERRORUNKNOWN() # ERRORUNKNOWN | The ID of the Category.
-since_date = swagger_client.ERRORUNKNOWN() # ERRORUNKNOWN | Only return transactions on or after this date. (optional)
+budget_id = swagger_client.ERRORUNKNOWN() # ERRORUNKNOWN | The id of the budget (\"last-used\" can also be used to specify the last used budget)
+category_id = swagger_client.ERRORUNKNOWN() # ERRORUNKNOWN | The id of the category
+since_date = swagger_client.ERRORUNKNOWN() # ERRORUNKNOWN | Only return transactions on or after this date (optional)
 type = swagger_client.ERRORUNKNOWN() # ERRORUNKNOWN | Only return transactions of a certain type (i.e. 'uncategorized', 'unapproved') (optional)
 
 try:
@@ -340,9 +283,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget_id** | [**ERRORUNKNOWN**](.md)| The ID of the Budget.  \&quot;last-used\&quot; can also be used to specify the last used budget. | 
- **category_id** | [**ERRORUNKNOWN**](.md)| The ID of the Category. | 
- **since_date** | [**ERRORUNKNOWN**](.md)| Only return transactions on or after this date. | [optional] 
+ **budget_id** | [**ERRORUNKNOWN**](.md)| The id of the budget (\&quot;last-used\&quot; can also be used to specify the last used budget) | 
+ **category_id** | [**ERRORUNKNOWN**](.md)| The id of the category | 
+ **since_date** | [**ERRORUNKNOWN**](.md)| Only return transactions on or after this date | [optional] 
  **type** | [**ERRORUNKNOWN**](.md)| Only return transactions of a certain type (i.e. &#39;uncategorized&#39;, &#39;unapproved&#39;) | [optional] 
 
 ### Return type
@@ -383,9 +326,9 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = swagger_client.TransactionsApi(swagger_client.ApiClient(configuration))
-budget_id = swagger_client.ERRORUNKNOWN() # ERRORUNKNOWN | The ID of the Budget.  \"last-used\" can also be used to specify the last used budget.
-payee_id = swagger_client.ERRORUNKNOWN() # ERRORUNKNOWN | The ID of the Payee.
-since_date = swagger_client.ERRORUNKNOWN() # ERRORUNKNOWN | Only return transactions on or after this date. (optional)
+budget_id = swagger_client.ERRORUNKNOWN() # ERRORUNKNOWN | The id of the budget (\"last-used\" can also be used to specify the last used budget)
+payee_id = swagger_client.ERRORUNKNOWN() # ERRORUNKNOWN | The id of the payee
+since_date = swagger_client.ERRORUNKNOWN() # ERRORUNKNOWN | Only return transactions on or after this date (optional)
 type = swagger_client.ERRORUNKNOWN() # ERRORUNKNOWN | Only return transactions of a certain type (i.e. 'uncategorized', 'unapproved') (optional)
 
 try:
@@ -400,9 +343,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget_id** | [**ERRORUNKNOWN**](.md)| The ID of the Budget.  \&quot;last-used\&quot; can also be used to specify the last used budget. | 
- **payee_id** | [**ERRORUNKNOWN**](.md)| The ID of the Payee. | 
- **since_date** | [**ERRORUNKNOWN**](.md)| Only return transactions on or after this date. | [optional] 
+ **budget_id** | [**ERRORUNKNOWN**](.md)| The id of the budget (\&quot;last-used\&quot; can also be used to specify the last used budget) | 
+ **payee_id** | [**ERRORUNKNOWN**](.md)| The id of the payee | 
+ **since_date** | [**ERRORUNKNOWN**](.md)| Only return transactions on or after this date | [optional] 
  **type** | [**ERRORUNKNOWN**](.md)| Only return transactions of a certain type (i.e. &#39;uncategorized&#39;, &#39;unapproved&#39;) | [optional] 
 
 ### Return type
@@ -443,9 +386,9 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = swagger_client.TransactionsApi(swagger_client.ApiClient(configuration))
-budget_id = swagger_client.ERRORUNKNOWN() # ERRORUNKNOWN | The ID of the Budget.  \"last-used\" can also be used to specify the last used budget.
-transaction_id = swagger_client.ERRORUNKNOWN() # ERRORUNKNOWN | The ID of the Transaction.
-transaction = swagger_client.SaveTransactionWrapper() # SaveTransactionWrapper | The Transaction to update.
+budget_id = swagger_client.ERRORUNKNOWN() # ERRORUNKNOWN | The id of the budget (\"last-used\" can also be used to specify the last used budget)
+transaction_id = swagger_client.ERRORUNKNOWN() # ERRORUNKNOWN | The id of the transaction
+transaction = swagger_client.SaveTransactionWrapper() # SaveTransactionWrapper | The transaction to update
 
 try:
     # Updates an existing transaction
@@ -459,9 +402,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget_id** | [**ERRORUNKNOWN**](.md)| The ID of the Budget.  \&quot;last-used\&quot; can also be used to specify the last used budget. | 
- **transaction_id** | [**ERRORUNKNOWN**](.md)| The ID of the Transaction. | 
- **transaction** | [**SaveTransactionWrapper**](SaveTransactionWrapper.md)| The Transaction to update. | 
+ **budget_id** | [**ERRORUNKNOWN**](.md)| The id of the budget (\&quot;last-used\&quot; can also be used to specify the last used budget) | 
+ **transaction_id** | [**ERRORUNKNOWN**](.md)| The id of the transaction | 
+ **transaction** | [**SaveTransactionWrapper**](SaveTransactionWrapper.md)| The transaction to update | 
 
 ### Return type
 

@@ -19,6 +19,7 @@ from __future__ import absolute_import
 from swagger_client.api.accounts_api import AccountsApi
 from swagger_client.api.budgets_api import BudgetsApi
 from swagger_client.api.categories_api import CategoriesApi
+from swagger_client.api.deprecated_api import DeprecatedApi
 from swagger_client.api.months_api import MonthsApi
 from swagger_client.api.payee_locations_api import PayeeLocationsApi
 from swagger_client.api.payees_api import PayeesApi
@@ -74,8 +75,13 @@ from swagger_client.models.payee_response import PayeeResponse
 from swagger_client.models.payee_wrapper import PayeeWrapper
 from swagger_client.models.payees_response import PayeesResponse
 from swagger_client.models.payees_wrapper import PayeesWrapper
+from swagger_client.models.save_month_category import SaveMonthCategory
+from swagger_client.models.save_month_category_wrapper import SaveMonthCategoryWrapper
 from swagger_client.models.save_transaction import SaveTransaction
 from swagger_client.models.save_transaction_wrapper import SaveTransactionWrapper
+from swagger_client.models.save_transactions_response import SaveTransactionsResponse
+from swagger_client.models.save_transactions_response_data import SaveTransactionsResponseData
+from swagger_client.models.save_transactions_wrapper import SaveTransactionsWrapper
 from swagger_client.models.scheduled_sub_transaction import ScheduledSubTransaction
 from swagger_client.models.scheduled_transaction_response import ScheduledTransactionResponse
 from swagger_client.models.scheduled_transaction_summary import ScheduledTransactionSummary

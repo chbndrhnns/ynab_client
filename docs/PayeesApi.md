@@ -31,8 +31,8 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = swagger_client.PayeesApi(swagger_client.ApiClient(configuration))
-budget_id = swagger_client.ERRORUNKNOWN() # ERRORUNKNOWN | The ID of the Budget.  \"last-used\" can also be used to specify the last used budget.
-payee_id = swagger_client.ERRORUNKNOWN() # ERRORUNKNOWN | The ID of the Payee.
+budget_id = swagger_client.ERRORUNKNOWN() # ERRORUNKNOWN | The id of the budget (\"last-used\" can also be used to specify the last used budget)
+payee_id = swagger_client.ERRORUNKNOWN() # ERRORUNKNOWN | The id of the payee
 
 try:
     # Single payee
@@ -46,8 +46,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget_id** | [**ERRORUNKNOWN**](.md)| The ID of the Budget.  \&quot;last-used\&quot; can also be used to specify the last used budget. | 
- **payee_id** | [**ERRORUNKNOWN**](.md)| The ID of the Payee. | 
+ **budget_id** | [**ERRORUNKNOWN**](.md)| The id of the budget (\&quot;last-used\&quot; can also be used to specify the last used budget) | 
+ **payee_id** | [**ERRORUNKNOWN**](.md)| The id of the payee | 
 
 ### Return type
 
@@ -87,7 +87,7 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = swagger_client.PayeesApi(swagger_client.ApiClient(configuration))
-budget_id = swagger_client.ERRORUNKNOWN() # ERRORUNKNOWN | The ID of the Budget.  \"last-used\" can also be used to specify the last used budget.
+budget_id = swagger_client.ERRORUNKNOWN() # ERRORUNKNOWN | The id of the budget (\"last-used\" can also be used to specify the last used budget)
 
 try:
     # List payees
@@ -101,7 +101,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget_id** | [**ERRORUNKNOWN**](.md)| The ID of the Budget.  \&quot;last-used\&quot; can also be used to specify the last used budget. | 
+ **budget_id** | [**ERRORUNKNOWN**](.md)| The id of the budget (\&quot;last-used\&quot; can also be used to specify the last used budget) | 
 
 ### Return type
 

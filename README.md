@@ -59,8 +59,8 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = swagger_client.AccountsApi(swagger_client.ApiClient(configuration))
-budget_id = swagger_client.ERRORUNKNOWN() # ERRORUNKNOWN | The ID of the Budget.  \"last-used\" can also be used to specify the last used budget.
-account_id = swagger_client.ERRORUNKNOWN() # ERRORUNKNOWN | The ID of the Account.
+budget_id = swagger_client.ERRORUNKNOWN() # ERRORUNKNOWN | The id of the budget (\"last-used\" can also be used to specify the last used budget)
+account_id = swagger_client.ERRORUNKNOWN() # ERRORUNKNOWN | The id of the account
 
 try:
     # Single account
@@ -84,6 +84,9 @@ Class | Method | HTTP request | Description
 *BudgetsApi* | [**get_budgets**](docs/BudgetsApi.md#get_budgets) | **GET** /budgets | List budgets
 *CategoriesApi* | [**get_categories**](docs/CategoriesApi.md#get_categories) | **GET** /budgets/{budget_id}/categories | List categories
 *CategoriesApi* | [**get_category_by_id**](docs/CategoriesApi.md#get_category_by_id) | **GET** /budgets/{budget_id}/categories/{category_id} | Single category
+*CategoriesApi* | [**get_month_category_by_id**](docs/CategoriesApi.md#get_month_category_by_id) | **GET** /budgets/{budget_id}/months/{month}/categories/{category_id} | Single category for a specific budget month
+*CategoriesApi* | [**update_month_category**](docs/CategoriesApi.md#update_month_category) | **PATCH** /budgets/{budget_id}/months/{month}/categories/{category_id} | Update an existing month category
+*DeprecatedApi* | [**bulk_create_transactions**](docs/DeprecatedApi.md#bulk_create_transactions) | **POST** /budgets/{budget_id}/transactions/bulk | Bulk create transactions
 *MonthsApi* | [**get_budget_month**](docs/MonthsApi.md#get_budget_month) | **GET** /budgets/{budget_id}/months/{month} | Single budget month
 *MonthsApi* | [**get_budget_months**](docs/MonthsApi.md#get_budget_months) | **GET** /budgets/{budget_id}/months | List budget months
 *PayeeLocationsApi* | [**get_payee_location_by_id**](docs/PayeeLocationsApi.md#get_payee_location_by_id) | **GET** /budgets/{budget_id}/payee_locations/{payee_location_id} | Single payee location
@@ -93,8 +96,7 @@ Class | Method | HTTP request | Description
 *PayeesApi* | [**get_payees**](docs/PayeesApi.md#get_payees) | **GET** /budgets/{budget_id}/payees | List payees
 *ScheduledTransactionsApi* | [**get_scheduled_transaction_by_id**](docs/ScheduledTransactionsApi.md#get_scheduled_transaction_by_id) | **GET** /budgets/{budget_id}/scheduled_transactions/{scheduled_transaction_id} | Single scheduled transaction
 *ScheduledTransactionsApi* | [**get_scheduled_transactions**](docs/ScheduledTransactionsApi.md#get_scheduled_transactions) | **GET** /budgets/{budget_id}/scheduled_transactions | List scheduled transactions
-*TransactionsApi* | [**bulk_create_transactions**](docs/TransactionsApi.md#bulk_create_transactions) | **POST** /budgets/{budget_id}/transactions/bulk | Bulk create transactions
-*TransactionsApi* | [**create_transaction**](docs/TransactionsApi.md#create_transaction) | **POST** /budgets/{budget_id}/transactions | Create new transaction
+*TransactionsApi* | [**create_transaction**](docs/TransactionsApi.md#create_transaction) | **POST** /budgets/{budget_id}/transactions | Create a single transaction or multiple transactions
 *TransactionsApi* | [**get_transaction_by_id**](docs/TransactionsApi.md#get_transaction_by_id) | **GET** /budgets/{budget_id}/transactions/{transaction_id} | Single transaction
 *TransactionsApi* | [**get_transactions**](docs/TransactionsApi.md#get_transactions) | **GET** /budgets/{budget_id}/transactions | List transactions
 *TransactionsApi* | [**get_transactions_by_account**](docs/TransactionsApi.md#get_transactions_by_account) | **GET** /budgets/{budget_id}/accounts/{account_id}/transactions | List account transactions
@@ -150,8 +152,13 @@ Class | Method | HTTP request | Description
  - [PayeeWrapper](docs/PayeeWrapper.md)
  - [PayeesResponse](docs/PayeesResponse.md)
  - [PayeesWrapper](docs/PayeesWrapper.md)
+ - [SaveMonthCategory](docs/SaveMonthCategory.md)
+ - [SaveMonthCategoryWrapper](docs/SaveMonthCategoryWrapper.md)
  - [SaveTransaction](docs/SaveTransaction.md)
  - [SaveTransactionWrapper](docs/SaveTransactionWrapper.md)
+ - [SaveTransactionsResponse](docs/SaveTransactionsResponse.md)
+ - [SaveTransactionsResponseData](docs/SaveTransactionsResponseData.md)
+ - [SaveTransactionsWrapper](docs/SaveTransactionsWrapper.md)
  - [ScheduledSubTransaction](docs/ScheduledSubTransaction.md)
  - [ScheduledTransactionResponse](docs/ScheduledTransactionResponse.md)
  - [ScheduledTransactionSummary](docs/ScheduledTransactionSummary.md)

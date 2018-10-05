@@ -29,17 +29,10 @@ class TestTransactionsApi(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_bulk_create_transactions(self):
-        """Test case for bulk_create_transactions
-
-        Bulk create transactions  # noqa: E501
-        """
-        pass
-
     def test_create_transaction(self):
         """Test case for create_transaction
 
-        Create new transaction  # noqa: E501
+        Create a single transaction or multiple transactions  # noqa: E501
         """
         pass
 

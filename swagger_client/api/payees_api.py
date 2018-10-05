@@ -43,8 +43,8 @@ class PayeesApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param ERRORUNKNOWN budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
-        :param ERRORUNKNOWN payee_id: The ID of the Payee. (required)
+        :param ERRORUNKNOWN budget_id: The id of the budget (\"last-used\" can also be used to specify the last used budget) (required)
+        :param ERRORUNKNOWN payee_id: The id of the payee (required)
         :return: PayeeResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -66,8 +66,8 @@ class PayeesApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param ERRORUNKNOWN budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
-        :param ERRORUNKNOWN payee_id: The ID of the Payee. (required)
+        :param ERRORUNKNOWN budget_id: The id of the budget (\"last-used\" can also be used to specify the last used budget) (required)
+        :param ERRORUNKNOWN payee_id: The id of the payee (required)
         :return: PayeeResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -146,7 +146,7 @@ class PayeesApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param ERRORUNKNOWN budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
+        :param ERRORUNKNOWN budget_id: The id of the budget (\"last-used\" can also be used to specify the last used budget) (required)
         :return: PayeesResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -168,7 +168,7 @@ class PayeesApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param ERRORUNKNOWN budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
+        :param ERRORUNKNOWN budget_id: The id of the budget (\"last-used\" can also be used to specify the last used budget) (required)
         :return: PayeesResponse
                  If the method is called asynchronously,
                  returns the request thread.

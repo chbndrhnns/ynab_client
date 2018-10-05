@@ -43,6 +43,20 @@ class TestCategoriesApi(unittest.TestCase):
         """
         pass
 
+    def test_get_month_category_by_id(self):
+        """Test case for get_month_category_by_id
+
+        Single category for a specific budget month  # noqa: E501
+        """
+        pass
+
+    def test_update_month_category(self):
+        """Test case for update_month_category
+
+        Update an existing month category  # noqa: E501
+        """
+        pass
+
 
 if __name__ == '__main__':
     unittest.main()

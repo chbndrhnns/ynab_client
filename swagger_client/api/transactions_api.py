@@ -33,150 +33,47 @@ class TransactionsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def bulk_create_transactions(self, budget_id, transactions, **kwargs):  # noqa: E501
-        """Bulk create transactions  # noqa: E501
+    def create_transaction(self, budget_id, save_transactions, **kwargs):  # noqa: E501
+        """Create a single transaction or multiple transactions  # noqa: E501
 
-        Creates multiple transactions  # noqa: E501
+        Creates a single transaction or multiple transactions.  If you provide a body containing a 'transaction' object, a single transaction will be created and if you provide a body containing a 'transactions' array, multiple transactions will be created.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.bulk_create_transactions(budget_id, transactions, async_req=True)
+        >>> thread = api.create_transaction(budget_id, save_transactions, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param ERRORUNKNOWN budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
-        :param BulkTransactions transactions: The list of Transactions to create. (required)
-        :return: BulkResponse
+        :param ERRORUNKNOWN budget_id: The id of the budget (\"last-used\" can also be used to specify the last used budget) (required)
+        :param SaveTransactionsWrapper save_transactions: The transaction or transactions to create (required)
+        :return: SaveTransactionsResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.bulk_create_transactions_with_http_info(budget_id, transactions, **kwargs)  # noqa: E501
+            return self.create_transaction_with_http_info(budget_id, save_transactions, **kwargs)  # noqa: E501
         else:
-            (data) = self.bulk_create_transactions_with_http_info(budget_id, transactions, **kwargs)  # noqa: E501
+            (data) = self.create_transaction_with_http_info(budget_id, save_transactions, **kwargs)  # noqa: E501
             return data
 
-    def bulk_create_transactions_with_http_info(self, budget_id, transactions, **kwargs):  # noqa: E501
-        """Bulk create transactions  # noqa: E501
+    def create_transaction_with_http_info(self, budget_id, save_transactions, **kwargs):  # noqa: E501
+        """Create a single transaction or multiple transactions  # noqa: E501
 
-        Creates multiple transactions  # noqa: E501
+        Creates a single transaction or multiple transactions.  If you provide a body containing a 'transaction' object, a single transaction will be created and if you provide a body containing a 'transactions' array, multiple transactions will be created.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.bulk_create_transactions_with_http_info(budget_id, transactions, async_req=True)
+        >>> thread = api.create_transaction_with_http_info(budget_id, save_transactions, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param ERRORUNKNOWN budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
-        :param BulkTransactions transactions: The list of Transactions to create. (required)
-        :return: BulkResponse
+        :param ERRORUNKNOWN budget_id: The id of the budget (\"last-used\" can also be used to specify the last used budget) (required)
+        :param SaveTransactionsWrapper save_transactions: The transaction or transactions to create (required)
+        :return: SaveTransactionsResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['budget_id', 'transactions']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method bulk_create_transactions" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'budget_id' is set
-        if ('budget_id' not in params or
-                params['budget_id'] is None):
-            raise ValueError("Missing the required parameter `budget_id` when calling `bulk_create_transactions`")  # noqa: E501
-        # verify the required parameter 'transactions' is set
-        if ('transactions' not in params or
-                params['transactions'] is None):
-            raise ValueError("Missing the required parameter `transactions` when calling `bulk_create_transactions`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'budget_id' in params:
-            path_params['budget_id'] = params['budget_id']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'transactions' in params:
-            body_params = params['transactions']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['bearer']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/budgets/{budget_id}/transactions/bulk', 'POST',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='BulkResponse',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def create_transaction(self, budget_id, transaction, **kwargs):  # noqa: E501
-        """Create new transaction  # noqa: E501
-
-        Creates a transaction  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_transaction(budget_id, transaction, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param ERRORUNKNOWN budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
-        :param SaveTransactionWrapper transaction: The Transaction to create. (required)
-        :return: TransactionResponse
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.create_transaction_with_http_info(budget_id, transaction, **kwargs)  # noqa: E501
-        else:
-            (data) = self.create_transaction_with_http_info(budget_id, transaction, **kwargs)  # noqa: E501
-            return data
-
-    def create_transaction_with_http_info(self, budget_id, transaction, **kwargs):  # noqa: E501
-        """Create new transaction  # noqa: E501
-
-        Creates a transaction  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_transaction_with_http_info(budget_id, transaction, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param ERRORUNKNOWN budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
-        :param SaveTransactionWrapper transaction: The Transaction to create. (required)
-        :return: TransactionResponse
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['budget_id', 'transaction']  # noqa: E501
+        all_params = ['budget_id', 'save_transactions']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -195,10 +92,10 @@ class TransactionsApi(object):
         if ('budget_id' not in params or
                 params['budget_id'] is None):
             raise ValueError("Missing the required parameter `budget_id` when calling `create_transaction`")  # noqa: E501
-        # verify the required parameter 'transaction' is set
-        if ('transaction' not in params or
-                params['transaction'] is None):
-            raise ValueError("Missing the required parameter `transaction` when calling `create_transaction`")  # noqa: E501
+        # verify the required parameter 'save_transactions' is set
+        if ('save_transactions' not in params or
+                params['save_transactions'] is None):
+            raise ValueError("Missing the required parameter `save_transactions` when calling `create_transaction`")  # noqa: E501
 
         collection_formats = {}
 
@@ -214,8 +111,8 @@ class TransactionsApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'transaction' in params:
-            body_params = params['transaction']
+        if 'save_transactions' in params:
+            body_params = params['save_transactions']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
             ['application/json'])  # noqa: E501
@@ -231,7 +128,7 @@ class TransactionsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='TransactionResponse',  # noqa: E501
+            response_type='SaveTransactionsResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -249,8 +146,8 @@ class TransactionsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param ERRORUNKNOWN budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
-        :param ERRORUNKNOWN transaction_id: The ID of the Transaction. (required)
+        :param ERRORUNKNOWN budget_id: The id of the budget (\"last-used\" can also be used to specify the last used budget) (required)
+        :param ERRORUNKNOWN transaction_id: The id of the transaction (required)
         :return: TransactionResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -272,8 +169,8 @@ class TransactionsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param ERRORUNKNOWN budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
-        :param ERRORUNKNOWN transaction_id: The ID of the Transaction. (required)
+        :param ERRORUNKNOWN budget_id: The id of the budget (\"last-used\" can also be used to specify the last used budget) (required)
+        :param ERRORUNKNOWN transaction_id: The id of the transaction (required)
         :return: TransactionResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -352,8 +249,8 @@ class TransactionsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param ERRORUNKNOWN budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
-        :param ERRORUNKNOWN since_date: Only return transactions on or after this date.
+        :param ERRORUNKNOWN budget_id: The id of the budget (\"last-used\" can also be used to specify the last used budget) (required)
+        :param ERRORUNKNOWN since_date: Only return transactions on or after this date
         :param ERRORUNKNOWN type: Only return transactions of a certain type ('uncategorized' and 'unapproved' are currently supported)
         :return: TransactionsResponse
                  If the method is called asynchronously,
@@ -376,8 +273,8 @@ class TransactionsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param ERRORUNKNOWN budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
-        :param ERRORUNKNOWN since_date: Only return transactions on or after this date.
+        :param ERRORUNKNOWN budget_id: The id of the budget (\"last-used\" can also be used to specify the last used budget) (required)
+        :param ERRORUNKNOWN since_date: Only return transactions on or after this date
         :param ERRORUNKNOWN type: Only return transactions of a certain type ('uncategorized' and 'unapproved' are currently supported)
         :return: TransactionsResponse
                  If the method is called asynchronously,
@@ -455,9 +352,9 @@ class TransactionsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param ERRORUNKNOWN budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
-        :param ERRORUNKNOWN account_id: The ID of the Account. (required)
-        :param ERRORUNKNOWN since_date: Only return transactions on or after this date.
+        :param ERRORUNKNOWN budget_id: The id of the budget (\"last-used\" can also be used to specify the last used budget) (required)
+        :param ERRORUNKNOWN account_id: The id of the account (required)
+        :param ERRORUNKNOWN since_date: Only return transactions on or after this date
         :param ERRORUNKNOWN type: Only return transactions of a certain type (i.e. 'uncategorized', 'unapproved')
         :return: TransactionsResponse
                  If the method is called asynchronously,
@@ -480,9 +377,9 @@ class TransactionsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param ERRORUNKNOWN budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
-        :param ERRORUNKNOWN account_id: The ID of the Account. (required)
-        :param ERRORUNKNOWN since_date: Only return transactions on or after this date.
+        :param ERRORUNKNOWN budget_id: The id of the budget (\"last-used\" can also be used to specify the last used budget) (required)
+        :param ERRORUNKNOWN account_id: The id of the account (required)
+        :param ERRORUNKNOWN since_date: Only return transactions on or after this date
         :param ERRORUNKNOWN type: Only return transactions of a certain type (i.e. 'uncategorized', 'unapproved')
         :return: TransactionsResponse
                  If the method is called asynchronously,
@@ -566,9 +463,9 @@ class TransactionsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param ERRORUNKNOWN budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
-        :param ERRORUNKNOWN category_id: The ID of the Category. (required)
-        :param ERRORUNKNOWN since_date: Only return transactions on or after this date.
+        :param ERRORUNKNOWN budget_id: The id of the budget (\"last-used\" can also be used to specify the last used budget) (required)
+        :param ERRORUNKNOWN category_id: The id of the category (required)
+        :param ERRORUNKNOWN since_date: Only return transactions on or after this date
         :param ERRORUNKNOWN type: Only return transactions of a certain type (i.e. 'uncategorized', 'unapproved')
         :return: HybridTransactionsResponse
                  If the method is called asynchronously,
@@ -591,9 +488,9 @@ class TransactionsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param ERRORUNKNOWN budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
-        :param ERRORUNKNOWN category_id: The ID of the Category. (required)
-        :param ERRORUNKNOWN since_date: Only return transactions on or after this date.
+        :param ERRORUNKNOWN budget_id: The id of the budget (\"last-used\" can also be used to specify the last used budget) (required)
+        :param ERRORUNKNOWN category_id: The id of the category (required)
+        :param ERRORUNKNOWN since_date: Only return transactions on or after this date
         :param ERRORUNKNOWN type: Only return transactions of a certain type (i.e. 'uncategorized', 'unapproved')
         :return: HybridTransactionsResponse
                  If the method is called asynchronously,
@@ -677,9 +574,9 @@ class TransactionsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param ERRORUNKNOWN budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
-        :param ERRORUNKNOWN payee_id: The ID of the Payee. (required)
-        :param ERRORUNKNOWN since_date: Only return transactions on or after this date.
+        :param ERRORUNKNOWN budget_id: The id of the budget (\"last-used\" can also be used to specify the last used budget) (required)
+        :param ERRORUNKNOWN payee_id: The id of the payee (required)
+        :param ERRORUNKNOWN since_date: Only return transactions on or after this date
         :param ERRORUNKNOWN type: Only return transactions of a certain type (i.e. 'uncategorized', 'unapproved')
         :return: HybridTransactionsResponse
                  If the method is called asynchronously,
@@ -702,9 +599,9 @@ class TransactionsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param ERRORUNKNOWN budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
-        :param ERRORUNKNOWN payee_id: The ID of the Payee. (required)
-        :param ERRORUNKNOWN since_date: Only return transactions on or after this date.
+        :param ERRORUNKNOWN budget_id: The id of the budget (\"last-used\" can also be used to specify the last used budget) (required)
+        :param ERRORUNKNOWN payee_id: The id of the payee (required)
+        :param ERRORUNKNOWN since_date: Only return transactions on or after this date
         :param ERRORUNKNOWN type: Only return transactions of a certain type (i.e. 'uncategorized', 'unapproved')
         :return: HybridTransactionsResponse
                  If the method is called asynchronously,
@@ -788,9 +685,9 @@ class TransactionsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param ERRORUNKNOWN budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
-        :param ERRORUNKNOWN transaction_id: The ID of the Transaction. (required)
-        :param SaveTransactionWrapper transaction: The Transaction to update. (required)
+        :param ERRORUNKNOWN budget_id: The id of the budget (\"last-used\" can also be used to specify the last used budget) (required)
+        :param ERRORUNKNOWN transaction_id: The id of the transaction (required)
+        :param SaveTransactionWrapper transaction: The transaction to update (required)
         :return: TransactionResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -812,9 +709,9 @@ class TransactionsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param ERRORUNKNOWN budget_id: The ID of the Budget.  \"last-used\" can also be used to specify the last used budget. (required)
-        :param ERRORUNKNOWN transaction_id: The ID of the Transaction. (required)
-        :param SaveTransactionWrapper transaction: The Transaction to update. (required)
+        :param ERRORUNKNOWN budget_id: The id of the budget (\"last-used\" can also be used to specify the last used budget) (required)
+        :param ERRORUNKNOWN transaction_id: The id of the transaction (required)
+        :param SaveTransactionWrapper transaction: The transaction to update (required)
         :return: TransactionResponse
                  If the method is called asynchronously,
                  returns the request thread.
